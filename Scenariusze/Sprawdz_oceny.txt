@@ -1,5 +1,5 @@
 - Sprawdź oceny
-	Przypadek użycia: Użytkownik sprawdza oceny z przedmiotu
+	Przypadek użycia: Użytkownik sprawdza oceny z przedmiotu.
 
 	Scenariusz: Przedstawienie ocen użytkownika.
 
@@ -7,7 +7,9 @@
 
 	Niezmienniki: Użytkownik chce sprawdzić oceny.
 
-	Opis: Użytkownik uruchamia system i loguje się. Wybiera przedmiot i wybiera sekcję oceny. System przedstawia użytkownikowi jego oceny.
+	Opis: Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "przedmioty",
+	dokonuje selekcji przedmiotu i otwiera sekcję "oceny".
+	System przedstawia użytkownikowi jego oceny z wybranego przedmiotu.
 
 	Warunki końcowe: Użytkownikowi zostają przedstawione oceny.
 

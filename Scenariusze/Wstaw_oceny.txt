@@ -1,24 +1,23 @@
 - Wstaw oceny
- 	Przypadek użycia: Użytkownik wstawia do systemu oceny
+ 	Przypadek użycia: Użytkownik wstawia do systemu oceny.
 
 	Scenariusz: Użytkownik otwiera sekcje wstawiania ocen.
 
-	Warunki wstępne: Użytkownikiem jest wykładowca. 
-			 Użytkownik jest zalogowany. 
-			 
+	Warunki wstępne: Użytkownikiem jest wykładowca i użytkownik jest zalogowany.
+	Użytkownik ma dostęp do przedmiotu.
 
 	Niezmienniki: Użytkownik posiada dostęp do przedmiotu.
 
-	Opis:   Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "wstaw oceny", 
+	Opis:   Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "przedmioty",
+		dokonuje selekcji przedmiotu i otwiera sekcję "wstaw oceny", 
 		która umożliwia wprowadzanie ocen dla studentów. 
-		Następnie, użytkownik wybiera konkretny przedmiot, dla którego chce wprowadzić oceny. 
 		System prezentuje listę studentów zarejestrowanych na wybrany przedmiot.
 		Użytkownik dokonuje wyboru konkretnego studenta spośród listy dostępnych opcji. 
 		Po wybraniu studenta, użytkownik wpisuje oceny dla tego studenta, 
 		zgodnie z określonymi kryteriami oceniania.
+		System aktualizuje bazę danych.
 
 	Warunki końcowe: Użytkownik pomyślnie wprowadził oceny do systemu dla wybranego przedmiotu
 	i wybranych studentów.
 
-	Źródła możliwych błędów: Brak dostępu użytkownika do listy przedmiotów lub konkretnego przedmiotu.
-				 Nieprawidłowe wprowadzenie ocen, takie jak niepoprawny format lub wartości ocen.
+	Źródła możliwych błędów: Nieprawidłowe wprowadzenie ocen, takie jak niepoprawny format lub wartości ocen.

@@ -1,23 +1,21 @@
-- Dodaj materialy
- 	Przypadek użycia: Wykładowca wstawia do wskazanego przedmiotu materiały. 
+- Dodaj materialy z przedmiotów
+ 	Przypadek użycia: Użytkownik wstawia do wskazanego przedmiotu materiały. 
 
-	Scenariusz: Wykładowca otwiera sekcje wstawiania materiałów.
+	Scenariusz: Użytkownik otwiera sekcje wstawiania materiałów.
 
 	Warunki wstępne: Użytkownikiem jest wykładowca. 
 			 Użytkownik jest zalogowany.
 			 Użytkownik ma dostęp do wybranego przedmiotu. 
-			 
 
 	Niezmienniki: Użytkownik dodaje materiały.
 
-	Opis:   Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "dodaj materialy", 
-		która umożliwia zamieszczanie materiałów dla studentów. 
-		Następnie, użytkownik wybiera konkretny przedmiot, dla którego chce dodać materiały. 
+	Opis:   Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "przedmioty",
+		dokonuje selekcji przedmiotu i otwiera sekcję "dodaj materiały",
+		która umożliwia zamieszczanie materiałów dla studentów i przesyła plik. 
 		Jeśli przesłany plik jest poprawny, system zapisuje materiał w bazie danych, 
-		przypisując go do odpowiedniego przedmiotu
+		przypisując go do odpowiedniego przedmiotu.
 
 	Warunki końcowe: Użytkownik pomyślnie dodał materiały do systemu dla wybranego przedmiotu.
 
-	Źródła możliwych błędów: Zbyt duże pliki.
-				 Konflikt nazw plików.
-				 Błędy formatowania plików.
+	Źródła możliwych błędów: Zbyt duży rozmiar pliku, konflikt nazw plików.
+				 

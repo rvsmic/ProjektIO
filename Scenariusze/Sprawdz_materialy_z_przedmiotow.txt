@@ -7,7 +7,9 @@
 
 	Niezmienniki: Użytkownik chce sprawdzić materiały dydaktyczne z przedmiotu.
 
-	Opis: Użytkownik uruchamia system i loguje się. Wybiera przedmiot i wybiera sekcję materiały. System przedstawia użytkownikowi dostępne materiały z wybranego przedmiotu.
+	Opis: Użytkownik uruchamia system i loguje się. Przechodzi do sekcji "przedmioty",
+	dokonuje selekcji przedmiotu i otwiera sekcję materiały.
+	System przedstawia użytkownikowi dostępne materiały z wybranego przedmiotu.
 
 	Warunki końcowe: Użytkownikowi zostają przedstawione materiały z przedmiotu.
 
