@@ -1,0 +1,14 @@
+- Sprawdź oceny
+	Przypadek użycia: Użytkownik sprawdza oceny z przedmiotu
+
+	Scenariusz: Przedstawienie ocen użytkownika.
+
+	Warunki wstępne: Użytkownik jest studentem, jest zalogowany i jest zapisany na przedmiot.
+
+	Niezmienniki: Użytkownik chce sprawdzić oceny.
+
+	Opis: Użytkownik uruchamia system i loguje się. Wybiera przedmiot i wybiera sekcję oceny. System przedstawia użytkownikowi jego oceny.
+
+	Warunki końcowe: Użytkownikowi zostają przedstawione oceny.
+
+	Źródła możliwych błędów: Brak wpisanych ocen z przedmiotu.

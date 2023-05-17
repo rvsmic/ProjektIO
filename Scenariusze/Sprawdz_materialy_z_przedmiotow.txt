@@ -1,0 +1,14 @@
+- Sprawdź materiały z przedmiotów
+	Przypadek użycia: Użytkownik sprawdza materiały z przedmiotu.
+
+	Scenariusz: Przedstawienie materiałów z przedmiotu.
+
+	Warunki wstępne: Użytkownik jest studentem, jest zalogowany i jest zapisany na przedmiot.
+
+	Niezmienniki: Użytkownik chce sprawdzić materiały dydaktyczne z przedmiotu.
+
+	Opis: Użytkownik uruchamia system i loguje się. Wybiera przedmiot i wybiera sekcję materiały. System przedstawia użytkownikowi dostępne materiały z wybranego przedmiotu.
+
+	Warunki końcowe: Użytkownikowi zostają przedstawione materiały z przedmiotu.
+
+	Źródła możliwych błędów: Brak dodanych materiałów z przedmiotu.
