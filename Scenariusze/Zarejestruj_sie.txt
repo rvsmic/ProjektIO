@@ -1,0 +1,14 @@
+- Zarejestruj sie
+    Przypadek użycia: Użytkownik rejestruje się w systemie.
+
+    Scenariusz: Zarejestrowanie się użytkownika w systemie.
+
+    Warunki wstępne: Użytkownik nie posiada konta w systemie. Użytkownik chce się zarejestrować. Użytkownik jest studentem i posiada swój własny numer albumu, lub użytkownik jest wykładowcą i posiada swój własny identyfikator.
+
+    Niezmienniki: Użytkownik chce się zarejestrować.
+
+    Opis: Użytkownik uruchamia system i przechodzi do ekranu rejestracji. Użytkownik wybiera opcję "Rejestracja dla studenta" lub "Rejestracja dla wykładowcy". Jeżeli użytkownik wybrał pierwszą, z dwóch opcji, wyświetlane jest pole "Numer albumu" w którym użytkownik wpisuje swój numer albumu. Jeżeli użytkownik wybrał drugą opcje, wyświetlane jest pole "Identyfikator" w którym użytkownik wpisuje swój identyfikator. W polu "Login" użytkownik wpisuje swoją własną, unikalną nazwę użytkownika, następnie w polu "Hasło" wpisuje hasło do swojego konta. Po wprowadzeniu danych system sprawdza, czy podany login jest unikalny i czy hasło spełnia wymogi. Utworzone zostaje nowe konto w systemie. Użytkownik zostaje zarejestrowany, a następnie automatycznie zalogowany na nowo utworzone konto, uzyskuje dostęp do systemu i następuje przekierowanie na stronę główną.
+
+    Warunki końcowe: Użytkownik zarejestrował się poprawnie. W systemie zostaje utworzone nowe konto.
+
+    Źródła możliwych błędów: Wprowadzona nazwa użytkownika już istnieje w systemie. Wprowadzone hasło jest niezgodne z ustalonymi wymogami.
