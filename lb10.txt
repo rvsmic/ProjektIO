@@ -1,0 +1,23 @@
+Dzisiaj 2 pierwsze punkty
+Zwiazane ze soba rzeczy - kilka - nie caly system
+
+WSKAZOWKA: OPLATA ZA WNIOSEK TO NIE FUNKCJONALNOSC! -> SZUKAMY CO JEST WAZNE DLA UżytkownikA - 5/6 GŁOWNYCH
+
+
+Scenariusze:
+- Skorzystaj z narzedzi dydaktycznych
+ 	Przypadek użycia: Użytkownik korzysta z narzedzi dydaktycznych
+
+	Scenariusz: Użytkownik otwiera repozytorium narzędzi.
+
+	Warunki wstępne: Użytkownik jest zalogowany.
+
+	Niezmienniki: Repozytorium zawiera wystarczający zestaw narzędzi dydaktycznych.
+
+	Opis: Użytkownik uruchamia system i loguje się. Wybiera sekcję "narzędzia dydaktyczne" i
+	wybiera pożądane narzędzie. Następuje przekierowanie i system uruchamia sesję w wybranym programie. 
+	(Po skorzystaniu z wybranego narzędzia, użytkownik opuszcza środowisko, a sesja się zamyka).
+
+	Warunki końcowe: Użytkownik uruchomił pożądane narzędzie.
+
+	Źródła możliwych błędów: Ograniczone zasoby repozytorium
