@@ -963,7 +963,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Yt2b5f1GB0CBh5LLRaWyCgAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">{Jezeli wyagane}</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">{Jezeli wymagane}</XPD:ATTR>
 <XPD:REF name="Model">jFrMBlmFQUyjhyeKbkammwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="6ieH2E1fekW1bd76eCzjHwAA">
@@ -989,7 +989,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="v8mgtRrQx02XcA28z9Z8PgAA">
 <XPD:ATTR name="Alpha" type="real">-5,41228122548265</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">74,5184540902453</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">{jeżeli są umieszczone}</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">{Jezeli sa umieszczone}</XPD:ATTR>
 <XPD:REF name="Model">8vHQc65V6EezEfJbHaDcvQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="S3ZMxBS3fEWtGqmHXzZc+wAA">
@@ -1013,7 +1013,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="0YEnEam04ECuwTBFg8A/KQAA">
 <XPD:ATTR name="Alpha" type="real">-4,00902850124649</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">76,0591874792257</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">{jeżeli są umieszczone}</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">{Jezeli sa umieszczone}</XPD:ATTR>
 <XPD:REF name="Model">ZLgZuH/fhUWsvtYaWf25vAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="vRzaH/E6gU6nsjAzxHDeAgAA">
@@ -1364,7 +1364,7 @@
 <XPD:REF name="Extends[0]">jFrMBlmFQUyjhyeKbkammwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[17]" type="UMLExtend" guid="jFrMBlmFQUyjhyeKbkammwAA">
-<XPD:ATTR name="Name" type="string">{Jezeli wyagane}</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">{Jezeli wymagane}</XPD:ATTR>
 <XPD:REF name="Namespace">kokaV0JF6UyYJHds4H7LQQAA</XPD:REF>
 <XPD:REF name="Base">I/dsB3y0P0awePU9vk/SzgAA</XPD:REF>
 <XPD:REF name="Extension">vhK1TZEj1ECUiit0n58phAAA</XPD:REF>
@@ -1375,7 +1375,7 @@
 <XPD:REF name="Views[3]">KGiPw8aig0+DZn+rGBz08wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[18]" type="UMLExtend" guid="8vHQc65V6EezEfJbHaDcvQAA">
-<XPD:ATTR name="Name" type="string">{jeżeli są umieszczone}</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">{Jezeli sa umieszczone}</XPD:ATTR>
 <XPD:REF name="Namespace">kokaV0JF6UyYJHds4H7LQQAA</XPD:REF>
 <XPD:REF name="Base">URrUXFbYW0uk0s+I3fkk7QAA</XPD:REF>
 <XPD:REF name="Extension">KdTK0/j7fU2JUK72OIrD0AAA</XPD:REF>
@@ -1386,7 +1386,7 @@
 <XPD:REF name="Views[3]">jG8c+nX9XEuFSp7WylWYfAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[19]" type="UMLExtend" guid="ZLgZuH/fhUWsvtYaWf25vAAA">
-<XPD:ATTR name="Name" type="string">{jeżeli są umieszczone}</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">{Jezeli sa umieszczone}</XPD:ATTR>
 <XPD:REF name="Namespace">kokaV0JF6UyYJHds4H7LQQAA</XPD:REF>
 <XPD:REF name="Base">fwJG/X3bbUq3dIw2sKt8fwAA</XPD:REF>
 <XPD:REF name="Extension">xUbv2KtMkUaELxp29MGGuQAA</XPD:REF>
