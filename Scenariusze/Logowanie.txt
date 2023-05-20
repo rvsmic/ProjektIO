@@ -8,6 +8,7 @@
 	Niezmienniki: Użytkownik chce się zalogować.
 	
 	Opis: Użytkownik uruchamia system i przechodzi do ekranu logowania.
+	Użytkownik wybiera opcję "Logowanie dla studenta" lub "Logowanie dla wykładowcy".
 	W polu "Login" wpisuje swoją własną, unikalną nazwę użytkownika,
 	następnie w polu "Hasło" wpisuje hasło do swojego konta.
 	Po wprowadzeniu danych następuje uwierzytelnianie. Użytkownik uzyskuje dostęp do systemu i
