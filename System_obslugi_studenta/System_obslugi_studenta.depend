@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1684955565 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.cpp
+	"Narzedzie.h"
+
+1684946200 c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.h
+	<iostream>
+	<string>
+
+1684947058 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.cpp
+	"Uzytkownik.h"
+
+1684957058 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
+	<iostream>
+	<string>
+
+1684956660 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\main.cpp
+	<iostream>
+	"Uczelnia.h"
+	"Uzytkownik.h"
+	"Student.h"
+	"Wykladowca.h"
+	"Przedmiot.h"
+
+1684957759 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
+	<iostream>
+	<string>
+	<vector>
+	"Uzytkownik.h"
+	"Student.h"
+	"Narzedzie.h"
+
+1684958274 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
+	<iostream>
+	<string>
+	<map>
+	<vector>
+	"Uzytkownik.h"
+	"Przedmiot.h"
+
+1684957112 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
+	<iostream>
+	<string>
+	<vector>
+	"Wykladowca.h"
+	"Student.h"
+
+1684958274 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
+	<iostream>
+	<string>
+	<vector>
+	"Uzytkownik.h"
+	"Przedmiot.h"
+	"Student.h"
+
+1684956949 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
+	"Przedmiot.h"
+
+1684957617 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
+	"Student.h"
+
+1684958359 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
+	"Wykladowca.h"
+
