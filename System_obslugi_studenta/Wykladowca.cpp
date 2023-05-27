@@ -83,6 +83,7 @@ void Wykladowca::dodajStudentaDoPrzedmiotu(string przedmiot, Student* student){
     for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
         if((*x)->getNazwa() == przedmiot){
             (*x)->dodajStudenta(student);
+            student->dodajOcene((*x), -1);
             return;
         }
     }

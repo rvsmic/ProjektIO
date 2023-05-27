@@ -34,6 +34,7 @@ public:
 	void sprawdzMaterialy(string przedmiot);
 	void dodajOcene(Przedmiot* przedmiot, int ocena);
 	void usunOcene(Przedmiot* przedmiot);
+	void wyswietlPrzedmioty();
 private:
 	string nrAlbumu;
 	map <Przedmiot*,vector<int> > oceny;

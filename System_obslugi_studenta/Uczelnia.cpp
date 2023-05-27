@@ -60,7 +60,7 @@ Uzytkownik* Uczelnia::logowanie(string login, string haslo, bool czyStudent) {
     else cout << "Logowanie dla wykladowcy...\n";
 
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
-        if((*x)->getLogin() == login){
+        if((*x)->getLogin() == login && (*x)->czyStudent == czyStudent){
             if((*x)->getHaslo() == haslo){
                 (*x)->zalogujSie();
                 return *x;
@@ -80,7 +80,7 @@ Uzytkownik* Uczelnia::rejestracja(string login, string haslo, bool czyStudent) {
 
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login){
-            cout << "Konto z podanym loginem ju¿ istnieje!\n";
+            cout << "Konto z podanym loginem juz istnieje!\n";
             return NULL;
         }
     }
@@ -111,6 +111,7 @@ void Uczelnia::skorzystajZNarzedzia(string nazwa) {
             return;
         }
     }
+    cout << "Nie znaleziono narzedzia!\nPowrot do ekranu poczatkowego\n";
 }
 
 Student* Uczelnia::znajdzStudenta(string nrAlbumu){
@@ -124,5 +125,11 @@ Student* Uczelnia::znajdzStudenta(string nrAlbumu){
     }
 
     cout << "Nie znaleziono studenta z takim numerem albumu!\n";
+}
+
+void Uczelnia::wyswietlNarzedzia(){
+    for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
+        cout << "\t- " << (*x)->getNazwa() << "(" << (*x)->getLink() << ")\n";
+     }
 }
 

@@ -57,9 +57,15 @@ void Student::sprawdzMaterialy(string przedmiot) {
 void Student::dodajOcene(Przedmiot* przedmiot, int ocena) {
     try{
         vector<int> tmp = oceny.at(przedmiot);
-        tmp.push_back(ocena);
+        if(ocena != -1){
+            tmp.push_back(ocena);
+        }
     }catch(out_of_range){
-        oceny.insert( pair<Przedmiot*, vector<int>>(przedmiot, ocena));
+        vector <int> tmp;
+        oceny[przedmiot] = tmp;
+        if(ocena != -1){
+            tmp.push_back(ocena);
+        }
     }
 }
 
@@ -69,6 +75,12 @@ void Student::usunOcene(Przedmiot* przedmiot) {
         tmp.pop_back();
     }catch(out_of_range){
         cout << "Nie znaleziono przedmiotu!";
+    }
+}
+
+void Student::wyswietlPrzedmioty(){
+    for(auto x: oceny){
+        cout << (x.first)->getNazwa() << "\n";
     }
 }
 

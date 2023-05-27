@@ -16,8 +16,19 @@
 * Logowanie zwraca pointera na uzytkownika
 
 ### TODO:
-* NAPRAWIC USECASES ✓
-* DODAC ATRYBUTY DO LOGICZNEGO ✓
-* DIAGRAM AKTWNOSCI ✓
-* DIAGRAM SEKWENCJI ✓
-* *Jezeli będzie czas to* IMPLEMENTACJA
+* Naprawić usecases ✓
+* Dodać atrybuty do logicznego ✓
+* Diagramy aktywności ✓
+* Diagram sekwencji ✓
+* *(Jezeli będzie czas to)* implementacja ✓
+
+## Tydzień III
+
+### TODO:
+* Naprawić activity diagramy - bez logowania itp. - jak są w scenariuszach startowe warunki to od nich zaczynamy
+* System pause po powrotach do pętli while
+* Wyświetlanie stanu programu wszędzie
+* Getch zamiast cin
+* Wyrównać metody w staruml / cpp
+* Dokonczyc implementację
+* Zacząć testy

@@ -36,6 +36,7 @@ public:
 	Uzytkownik* rejestracja(string login, string haslo, bool czyStudent);
 	void skorzystajZNarzedzia(string nazwa);
 	Student* znajdzStudenta(string nrAlbumu);
+	void wyswietlNarzedzia();
 private:
 	string nazwa;
 	vector <Uzytkownik*> uzytkownicy;
