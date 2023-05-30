@@ -97,4 +97,15 @@ void Wykladowca::usunStudentaZPrzedmiotu(string przedmiot, Student* student){
         }
     }
 }
+// DODANE - CO NAJMNIEJ TO
+void Wykladowca::wyswietlPrzedmioty() {
+    int i=0;
+    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
+        cout<<i<<" - "<<(*x)->getNazwa()<<"\n";
+        ++i;
+    }
+    if(i==0) {
+        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+    }
+}
 

@@ -56,8 +56,8 @@ Uzytkownik* Uczelnia::logowanie(string login, string haslo, bool czyStudent) {
         return NULL;
     }
 
-    if(czyStudent) cout << "Logowanie dla studenta...\n";
-    else cout << "Logowanie dla wykladowcy...\n";
+    //if(czyStudent) cout << "Logowanie dla studenta...\n";
+    //else cout << "Logowanie dla wykladowcy...\n";
 
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login && (*x)->czyStudent == czyStudent){
@@ -75,8 +75,8 @@ Uzytkownik* Uczelnia::logowanie(string login, string haslo, bool czyStudent) {
 }
 
 Uzytkownik* Uczelnia::rejestracja(string login, string haslo, bool czyStudent) {
-    if(czyStudent) cout << "Rejestracja dla studenta...\n";
-    else cout << "Rejestracja dla wykladowcy...\n";
+    //if(czyStudent) cout << "Rejestracja dla studenta...\n";
+    //else cout << "Rejestracja dla wykladowcy...\n";
 
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login){
@@ -86,7 +86,7 @@ Uzytkownik* Uczelnia::rejestracja(string login, string haslo, bool czyStudent) {
     }
 
     if(czyStudent){
-        cout << "Podaj numer albumu: \n";
+        cout << "Podaj numer albumu: ";
         string nrAlbumu;
         cin >> nrAlbumu;
         Student* student = new Student(login, haslo, nrAlbumu);
@@ -94,7 +94,7 @@ Uzytkownik* Uczelnia::rejestracja(string login, string haslo, bool czyStudent) {
         uzytkownicy.push_back(student);
         return student;
     } else {
-        cout << "Podaj identyfikator: \n";
+        cout << "Podaj identyfikator: ";
         string identyfikator;
         cin >> identyfikator;
         Wykladowca* wykladowca = new Wykladowca(login, haslo, identyfikator);
