@@ -20,6 +20,7 @@ int main()
     uczelnia->dodajNarzedzie(word);
 
     bool EXIT_FLAG = false;
+    bool error = false;
 
     Uzytkownik* user = NULL;
 
@@ -60,6 +61,16 @@ int main()
                             czyStudent = false;
                             break;
                         }
+                        default: {
+                            cout<<"Brak opcji o kodzie "<<option<<"\n";
+                            error = true;
+                            system("pause");
+                            break;
+                        }
+                    }
+                    if(error) {
+                        error = false;
+                        break;
                     }
                     cout<<"Podaj login: ";
                     cin >> login;
@@ -103,6 +114,16 @@ int main()
                             czyStudent = false;
                             break;
                         }
+                        default: {
+                            cout<<"Brak opcji o kodzie "<<option<<"\n";
+                            error = true;
+                            system("pause");
+                            break;
+                        }
+                    }
+                    if(error) {
+                        error = false;
+                        break;
                     }
 
                     cout<<"Podaj login: ";
@@ -123,11 +144,17 @@ int main()
                     system("pause");
                     break;
                 }
+                default: {
+                    cout<<"Brak opcji o kodzie "<<option<<"\n";
+                    system("pause");
+                    break;
+                }
             }
 
         } else if (user->czyStudent){           // STUDENT
             cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n";
             cin >> option;
+            system("cls");
             switch(option){
                 case '0':{
                     user->wylogujSie();
@@ -135,6 +162,7 @@ int main()
                     break;
                 }
                 case '1':{
+                    cout<<"\nN A R Z E D Z I A   D Y D A K T Y C Z N E\n\n";
                     uczelnia->wyswietlNarzedzia();
                     cout << "Wpisz nazwe wybranego oprogramowania: ";
                     cin >> wybor;
@@ -143,14 +171,44 @@ int main()
                     break;
                 }
                 case '2':{  // NIEDOKONCZONE
-                    cout << "Wybierz przedmiot: ";
+                    cout<<"\nP R Z E D M I O T Y\n\n";
                     ((Student*)user)->wyswietlPrzedmioty();
-                    cin >> wybor;
+                    cout << "1 - Sprawdz materialy z przedmiotu\n2 - Sprawdz oceny z przedmiotu\n";
+                    char choice;
+                    cin >> choice;
+                    system("cls");
+                    switch(choice) {
+                        case '1': {
+                            cout<<"Przedmioty na ktore jestes zapisany:\n";
+                            ((Student*)user)->wyswietlPrzedmioty();
+                            cout<<"Podaj nazwe przedmiotu: ";
+                            string przedmiot;
+                            cin>>przedmiot;
+                            ((Student*)user)->sprawdzMaterialy(przedmiot);
+                            system("pause");
+                            break;
+                        }
+                        case '2': {
+                            cout<<"Przedmioty na ktore jestes zapisany:\n";
+                            ((Student*)user)->wyswietlPrzedmioty();
+                            cout<<"Podaj nazwe przedmiotu: ";
+                            string przedmiot;
+                            cin>>przedmiot;
+                            ((Student*)user)->sprawdzOceny(przedmiot);
+                            system("pause");
+                            break;
+                        }
+                    }
                     break;
                 }
                 case '9':{
                     EXIT_FLAG = true;
                     cout << "Wyjscie z programu...\n";
+                    system("pause");
+                    break;
+                }
+                default: {
+                    cout<<"Brak opcji o kodzie "<<option<<"\n";
                     system("pause");
                     break;
                 }
@@ -203,13 +261,15 @@ int main()
 
                             // wyswietl oceny + wyswietl materialy ????
 
-                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n0 - Powrot do ekranu domowego\n";
+                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Dodaj studenta do przedmiotu\n0 - Powrot do ekranu domowego\n";
                             char sub_choice;
                             cin>>sub_choice;
                             system("cls");
                             switch(sub_choice) {
                                 case '1': {
                                     cout<<"\nD O D A J   M A T E R I A L Y\n\n";
+                                    cout<<"Materialy do przedmiotow:\n";
+                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZMaterialami();
                                     cout<<"Podaj nazwe przedmiotu: ";
                                     string przedmiot;
                                     cin>>przedmiot;
@@ -222,12 +282,51 @@ int main()
                                 }
                                 case '2': {
                                     cout<<"\nD O D A J   O C E N E\n\n";
-                                    // WYSWIETLIC STUDENTOW
+                                    cout<<"Studenci zapisani na przedmioty:\n";
+                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentamiIOcenami();
                                     int ocena;
+                                    string przedmiot,nrAlbumu;
+                                    cout<<"Podaj nazwe przedmiotu: ";
+                                    cin>>przedmiot;
+                                    // co jak nie ma
+                                    cout<<"Podaj numer albumu studenta: ";
+                                     // co jak nie ma
+                                    cin>>nrAlbumu;
+                                    cout<<"Podaj ocene: ";
+                                    // niedozwolona ocena
+                                    cin>>ocena;
+
+                                    ((Wykladowca*)user)->dodajOcene(przedmiot,nrAlbumu,ocena);
                                     cout<<"DO ZROBIENIA!!!\n";
                                     break;
                                 }
+                                case '3': {
+                                    cout<<"\nD O D A J   S T U D E N T A   D O   P R Z E D M I O T U\n\n";
+                                    cout<<"Prowadzone przedmioty i zapisani na nie studenci:\n";
+                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentami();
+                                    cout<<"Uzytkownicy zarejestrowani w systemie:\n";
+                                    uczelnia->wyswietlUzytkownikow();
+
+                                    int ocena;
+                                    string przedmiot,nrAlbumu;
+                                    cout<<"Podaj nazwe przedmiotu: ";
+                                    cin>>przedmiot;
+                                    cout<<"Podaj numer albumu studenta: ";
+                                    cin>>nrAlbumu;
+                                    ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
+                                    cout<<"Pomyslnie dodano studenta\n";
+                                    break;
+                                }
+                                default: {
+                                    cout<<"Brak opcji o kodzie "<<sub_choice<<"\n";
+                                    break;
+                                }
                             }
+                            system("pause");
+                            break;
+                        }
+                        default: {
+                            cout<<"Brak opcji o kodzie "<<choice<<"\n";
                             system("pause");
                             break;
                         }

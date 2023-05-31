@@ -133,3 +133,13 @@ void Uczelnia::wyswietlNarzedzia(){
      }
 }
 
+void Uczelnia::wyswietlUzytkownikow(){
+    for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
+        if((*x)->czyStudent) {
+            cout<<" - STUDENT - nr Albumu: "<<((Student*)(*x))->getNrAlbumu()<<", Login: "<<(*x)->getLogin()<<"\n";
+        } else {
+            cout<<" - WYKLADOWCA - nr Identyfikatora: "<<((Wykladowca*)(*x))->getIdentyfikator()<<", Login: "<<(*x)->getLogin()<<"\n";
+        }
+     }
+}
+

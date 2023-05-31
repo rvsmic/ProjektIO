@@ -39,6 +39,8 @@ public:
 	void dodajStudenta(Student* student);
 	void usunStudenta(Student* student);
 	Student* znajdzStudenta(string nrAlbumu);
+	void wyswietlStudentow();
+	void wyswietlStudentowIOceny(string przedmiot);
 private:
 	string nazwa;
 	Wykladowca* wykladowca;

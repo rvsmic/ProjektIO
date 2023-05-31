@@ -50,6 +50,7 @@ void Wykladowca::dodajMaterialy(string przedmiot, string link) {
             return;
         }
     }
+    cout<<"Nie ma takiego przedmiotu!n";
 }
 
 void Wykladowca::usunMaterialy(string przedmiot, string link) {
@@ -101,11 +102,51 @@ void Wykladowca::usunStudentaZPrzedmiotu(string przedmiot, Student* student){
 void Wykladowca::wyswietlPrzedmioty() {
     int i=0;
     for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        cout<<i<<" - "<<(*x)->getNazwa()<<"\n";
+        cout<<" - "<<(*x)->getNazwa()<<"\n";
         ++i;
     }
     if(i==0) {
         cout<<"Brak uczonych przedmiotow w bazie danych!\n";
     }
 }
+
+void Wykladowca::wyswietlPrzedmiotyZeStudentami() {
+    int i=0;
+    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
+        cout<<" - "<<(*x)->getNazwa()<<"\n";
+        (*x)->wyswietlStudentow();
+        ++i;
+    }
+    if(i==0) {
+        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+    }
+}
+
+void Wykladowca::wyswietlPrzedmiotyZMaterialami() {
+    int i=0;
+    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
+        cout<<" - "<<(*x)->getNazwa()<<"\n";
+        (*x)->wyswietlMaterialy();
+        ++i;
+    }
+    if(i==0) {
+        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+    }
+}
+
+void Wykladowca::wyswietlPrzedmiotyZeStudentamiIOcenami() {
+    int i=0;
+    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
+        cout<<" - "<<(*x)->getNazwa()<<"\n";
+        (*x)->wyswietlStudentowIOceny((*x)->getNazwa());
+        ++i;
+    }
+    if(i==0) {
+        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+    }
+}
+
+
+
+
 

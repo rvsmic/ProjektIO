@@ -32,8 +32,8 @@ void Student::sprawdzOceny(string przedmiot) {
     for(auto it = oceny.begin(); it != oceny.end(); ++it){
         if((*it).first->getNazwa() == przedmiot){
             cout << "Oceny z przedmiotu " << przedmiot << ":\n";
-            for(auto x: (*it).second){
-                cout << x << " ";
+            for(auto x = (*it).second.begin(); x!= (*it).second.end(); ++x){
+                cout << (*x) << " ";
             }
             cout << "\n";
             return;
@@ -80,7 +80,7 @@ void Student::usunOcene(Przedmiot* przedmiot) {
 
 void Student::wyswietlPrzedmioty(){
     for(auto x: oceny){
-        cout << (x.first)->getNazwa() << "\n";
+        cout <<"\t> "<<(x.first)->getNazwa() << "\n";
     }
 }
 

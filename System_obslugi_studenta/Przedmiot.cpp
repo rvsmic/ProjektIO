@@ -49,8 +49,8 @@ void Przedmiot::usunMaterialy(string link) {
 }
 
 void Przedmiot::wyswietlMaterialy() {
-    for(int x = 0; x < materialy.size(); ){
-        cout << x + 1 << ". \n" << materialy.at(x) << "\n\n";
+    for(auto x = materialy.begin(); x != materialy.end(); ++x){
+        cout<<"\t> "<<(*x)<<"\n";
     }
 }
 
@@ -72,5 +72,19 @@ Student* Przedmiot::znajdzStudenta(string nrAlbumu){
         if((*x)->getNrAlbumu() == nrAlbumu){
             return *x;
         }
+    }
+}
+
+void Przedmiot::wyswietlStudentow() {
+    for(auto x = studenci.begin(); x != studenci.end(); ++x){
+        cout<<"\t> nrAlbumu: "<<(*x)->getNrAlbumu()<<", Login: "<<(*x)->getLogin()<<"\n";
+    }
+}
+
+void Przedmiot::wyswietlStudentowIOceny(string przedmiot) {
+    for(auto x = studenci.begin(); x != studenci.end(); ++x){
+        cout<<"\t> nrAlbumu: "<<(*x)->getNrAlbumu()<<", Login: "<<(*x)->getLogin()<<", Oceny: ";
+        (*x)->sprawdzOceny((przedmiot));
+        cout<<"\n";
     }
 }

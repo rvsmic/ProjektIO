@@ -40,6 +40,9 @@ public:
 	void dodajStudentaDoPrzedmiotu(string przedmiot, Student* student);
 	void usunStudentaZPrzedmiotu(string przedmiot, Student* student);
 	void wyswietlPrzedmioty();
+	void wyswietlPrzedmiotyZeStudentami();
+	void wyswietlPrzedmiotyZMaterialami();
+	void wyswietlPrzedmiotyZeStudentamiIOcenami();
 private:
 	string identyfikator;
 	vector <Przedmiot*> przedmioty;
