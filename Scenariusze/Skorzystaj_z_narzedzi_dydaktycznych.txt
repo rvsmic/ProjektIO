@@ -11,6 +11,6 @@
 	wybiera pożądane narzędzie. Następuje przekierowanie i system uruchamia sesję w wybranym programie. 
 	(Po skorzystaniu z wybranego narzędzia, użytkownik opuszcza środowisko, a sesja się zamyka).
 
-	Warunki końcowe: Użytkownik uruchomił pożądane narzędzie.
+	Warunki końcowe: Użytkownik uzyskał dostęp do wybranego narzędzia.
 
 	Źródła możliwych błędów: Ograniczone zasoby repozytorium

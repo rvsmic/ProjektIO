@@ -25,7 +25,7 @@
 ## Tydzień III
 
 ### TODO:
-* Naprawić activity diagramy - bez logowania itp. - jak są w scenariuszach startowe warunki to od nich zaczynamy
+* Naprawić activity diagramy - bez logowania itp. - jak są w scenariuszach startowe warunki to od nich zaczynamy :heavy_check_mark:
 * System pause po powrotach do pętli while
 * Wyświetlanie stanu programu wszędzie
 * Getch zamiast cin
