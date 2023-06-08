@@ -41,6 +41,8 @@ public:
 	Student* znajdzStudenta(string nrAlbumu);
 	void wyswietlStudentow();
 	void wyswietlStudentowIOceny(string przedmiot);
+	vector <string>* getMaterialy();
+	vector <Student*>* getStudenci();
 private:
 	string nazwa;
 	Wykladowca* wykladowca;

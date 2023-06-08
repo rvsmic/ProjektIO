@@ -88,3 +88,11 @@ void Przedmiot::wyswietlStudentowIOceny(string przedmiot) {
         cout<<"\n";
     }
 }
+
+vector <string>* Przedmiot::getMaterialy(){
+    return &materialy;
+}
+
+vector <Student*>* Przedmiot::getStudenci(){
+    return &studenci;
+}

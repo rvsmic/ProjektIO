@@ -45,6 +45,7 @@
 		<Unit filename="Wykladowca.cpp" />
 		<Unit filename="Wykladowca.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="tests/test_class.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

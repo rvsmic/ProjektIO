@@ -43,6 +43,7 @@ public:
 	void wyswietlPrzedmiotyZeStudentami();
 	void wyswietlPrzedmiotyZMaterialami();
 	void wyswietlPrzedmiotyZeStudentamiIOcenami();
+	vector <Przedmiot*>* getPrzedmioty();
 private:
 	string identyfikator;
 	vector <Przedmiot*> przedmioty;

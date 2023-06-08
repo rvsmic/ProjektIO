@@ -237,35 +237,64 @@ int main()
                 }
                 case '2': {
                     cout<<"\nP R Z E D M I O T Y\n\n";
-                    cout << "1 - Dodaj przedmiot\n2 - Uczone przedmioty\n";
-                    char choice;
-                    cin >> choice;
+                    cout << "1 - Dodaj przedmiot\n2 - Prowadzone przedmioty\n";
+                    cin >> option;
                     system("cls");
-                    switch(choice) {
+                    switch(option) {
                         case '1': {
                             cout<<"\nD O D A J   P R Z E D M I O T\n\n";
-                            string nazwa;
                             cout << "Podaj nazwe nowego przedmiotu: ";
-                            cin >> nazwa;
-                            // sprawdzenie czy nie duplikat?
-                            ((Wykladowca*)user)->dodajPrzedmiot(nazwa);
-                            cout<<"Pomyslnie dodano przedmiot \""<<nazwa<<"\"\n";
+                            cin >> wybor;
+                            bool tmp = true;
+                            for(Przedmiot* x: *((Wykladowca*)user)->getPrzedmioty()){
+                                if(x->getNazwa() == wybor){
+                                    cout << "Przedmiot o tej nazwie juz istnieje!\n"; // cos tam
+                                    system("pause");
+                                    tmp = false;
+                                    break;
+                                }
+                            }
+                            if(tmp){
+                                ((Wykladowca*)user)->dodajPrzedmiot(wybor);
+                                cout<<"Pomyslnie dodano przedmiot \""<<wybor<<"\"\n";
+                            }
                             system("pause");
                             break;
                         }
                         case '2': {
-                            cout<<"\nU C Z O N E   P R Z E D M I O T Y\n\n";
+                            cout<<"\nP R O W A D Z O N E   P R Z E D M I O T Y\n\n";
                             cout<<"Aktualnie prowadzone przedmioty:\n";
                             ((Wykladowca*)user)->wyswietlPrzedmioty();
+                            vector <Przedmiot*>* przedmioty = ((Wykladowca*)user)->getPrzedmioty();
+                            if(przedmioty->empty()) {
+                                system("pause");
+                                break;
+                            }
                             cout<<"\n";
+                            cout << "Wpisz nazwe wybranego przedmiotu: ";
+                            cin >> wybor;
+                            Przedmiot* przedmiot = NULL;
+                            for(Przedmiot* x: *przedmioty){
+                                if(x->getNazwa() == wybor){
+                                    przedmiot = x;
+                                    break;
+                                }
+                            }
+                            if(przedmiot == NULL) {
+                                cout << "Nie ma takiego przedmiotu\n";
+                                system("pause");
+                                break;
+                            }
 
-                            // wyswietl oceny + wyswietl materialy ????
-
-                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Dodaj studenta do przedmiotu\n0 - Powrot do ekranu domowego\n";
-                            char sub_choice;
-                            cin>>sub_choice;
                             system("cls");
-                            switch(sub_choice) {
+                            cout << "Przedmiot: " << przedmiot->getNazwa() << "\n";
+                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Dodaj studenta do przedmiotu\n0 - Powrot do ekranu domowego\n";
+                            cin>>option;
+                            system("cls");
+                            switch(option) {
+                                case '0': {
+                                    break;
+                                }
                                 case '1': {
                                     cout<<"\nD O D A J   M A T E R I A L Y\n\n";
                                     cout<<"Materialy do przedmiotow:\n";
@@ -285,40 +314,86 @@ int main()
                                     cout<<"Studenci zapisani na przedmioty:\n";
                                     ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentamiIOcenami();
                                     int ocena;
-                                    string przedmiot,nrAlbumu;
+                                    string nrAlbumu;
                                     cout<<"Podaj nazwe przedmiotu: ";
-                                    cin>>przedmiot;
-                                    // co jak nie ma
+                                    cin>>wybor;
+                                    Przedmiot* przedmiot = NULL;
+                                    for(Przedmiot* x: *przedmioty){
+                                        if(x->getNazwa() == wybor){
+                                            przedmiot = x;
+                                            break;
+                                        }
+                                    }
+                                    if(przedmiot == NULL) {
+                                        cout << "Nie ma takiego przedmiotu\n";
+                                        system("pause");
+                                        break;
+                                    }
                                     cout<<"Podaj numer albumu studenta: ";
-                                     // co jak nie ma
                                     cin>>nrAlbumu;
-                                    cout<<"Podaj ocene: ";
-                                    // niedozwolona ocena
-                                    cin>>ocena;
+                                    bool err = true;
+                                    for(Student* x: *(przedmiot->getStudenci())){
+                                        if(x->getNrAlbumu() == nrAlbumu){
+                                            err = false;
+                                            break;
+                                        }
+                                    }
+                                    if(err) {
+                                        cout << "Nie ma takiego studenta!\n";
+                                        system("pause");
+                                        break;
+                                    }
 
-                                    ((Wykladowca*)user)->dodajOcene(przedmiot,nrAlbumu,ocena);
-                                    cout<<"DO ZROBIENIA!!!\n";
+                                    cout<<"Podaj ocene: ";
+                                    cin>>ocena;
+                                    while(ocena < 2 || ocena > 5){
+                                        cout << "Zla ocena, wpisz poprawna: ";
+                                        cin>>ocena;
+                                    }
+                                    ((Wykladowca*)user)->dodajOcene(przedmiot->getNazwa(),nrAlbumu,ocena);
                                     break;
                                 }
                                 case '3': {
                                     cout<<"\nD O D A J   S T U D E N T A   D O   P R Z E D M I O T U\n\n";
                                     cout<<"Prowadzone przedmioty i zapisani na nie studenci:\n";
-                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentami();
+                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentami();////asdasdasdasdadsadas
                                     cout<<"Uzytkownicy zarejestrowani w systemie:\n";
                                     uczelnia->wyswietlUzytkownikow();
-
-                                    int ocena;
-                                    string przedmiot,nrAlbumu;
+                                    string nrAlbumu;
                                     cout<<"Podaj nazwe przedmiotu: ";
-                                    cin>>przedmiot;
+                                    cin>>wybor;
+                                    Przedmiot* przedmiot = NULL;
+                                    for(Przedmiot* x: *przedmioty){
+                                        if(x->getNazwa() == wybor){
+                                            przedmiot = x;
+                                            break;
+                                        }
+                                    }
+                                    if(przedmiot == NULL) {
+                                        cout << "Nie ma takiego przedmiotu\n";
+                                        system("pause");
+                                        break;
+                                    }
                                     cout<<"Podaj numer albumu studenta: ";
                                     cin>>nrAlbumu;
-                                    ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
+                                    bool err = true;
+                                    for(Student* x: *(przedmiot->getStudenci())){
+                                        if(x->getNrAlbumu() == nrAlbumu){
+                                            err = false;
+                                            break;
+                                        }
+                                    }
+                                    if(err) {
+                                        cout << "Nie ma takiego studenta!\n";
+                                        system("pause");
+                                        break;
+                                    }
+                                    ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(wybor,uczelnia->znajdzStudenta(nrAlbumu));
                                     cout<<"Pomyslnie dodano studenta\n";
                                     break;
                                 }
                                 default: {
-                                    cout<<"Brak opcji o kodzie "<<sub_choice<<"\n";
+                                    cout<<"Brak opcji o kodzie "<<option<<"\n";
                                     break;
                                 }
                             }
@@ -326,7 +401,7 @@ int main()
                             break;
                         }
                         default: {
-                            cout<<"Brak opcji o kodzie "<<choice<<"\n";
+                            cout<<"Brak opcji o kodzie "<<option<<"\n";
                             system("pause");
                             break;
                         }

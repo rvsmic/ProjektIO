@@ -61,7 +61,7 @@
 1684958359 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 
-1685014024 source:d:\io\projektio\system_obslugi_studenta\main.cpp
+1685610104 source:d:\io\projektio\system_obslugi_studenta\main.cpp
 	<iostream>
 	"Uczelnia.h"
 	"Uzytkownik.h"
@@ -71,7 +71,7 @@
 	<windows.h>
 	<conio.h>
 
-1685012548 d:\io\projektio\system_obslugi_studenta\uczelnia.h
+1685553210 d:\io\projektio\system_obslugi_studenta\uczelnia.h
 	<iostream>
 	<string>
 	<vector>
@@ -91,14 +91,14 @@
 	"Uzytkownik.h"
 	"Przedmiot.h"
 
-1684960338 d:\io\projektio\system_obslugi_studenta\przedmiot.h
+1685609468 d:\io\projektio\system_obslugi_studenta\przedmiot.h
 	<iostream>
 	<string>
 	<vector>
 	"Wykladowca.h"
 	"Student.h"
 
-1684960340 d:\io\projektio\system_obslugi_studenta\wykladowca.h
+1685606978 d:\io\projektio\system_obslugi_studenta\wykladowca.h
 	<iostream>
 	<string>
 	<vector>
@@ -113,19 +113,19 @@
 1684960338 source:d:\io\projektio\system_obslugi_studenta\narzedzie.cpp
 	"Narzedzie.h"
 
-1684960338 source:d:\io\projektio\system_obslugi_studenta\przedmiot.cpp
+1685609922 source:d:\io\projektio\system_obslugi_studenta\przedmiot.cpp
 	"Przedmiot.h"
 
-1685014010 source:d:\io\projektio\system_obslugi_studenta\student.cpp
+1685555834 source:d:\io\projektio\system_obslugi_studenta\student.cpp
 	"Student.h"
 
-1685012956 source:d:\io\projektio\system_obslugi_studenta\uczelnia.cpp
+1685553228 source:d:\io\projektio\system_obslugi_studenta\uczelnia.cpp
 	"Uczelnia.h"
 
 1685010432 source:d:\io\projektio\system_obslugi_studenta\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1685013772 source:d:\io\projektio\system_obslugi_studenta\wykladowca.cpp
+1685607846 source:d:\io\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 
 1685556278 source:f:\io\projektio\system_obslugi_studenta\main.cpp

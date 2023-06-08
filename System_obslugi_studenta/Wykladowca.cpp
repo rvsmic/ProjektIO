@@ -106,7 +106,7 @@ void Wykladowca::wyswietlPrzedmioty() {
         ++i;
     }
     if(i==0) {
-        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
     }
 }
 
@@ -144,6 +144,10 @@ void Wykladowca::wyswietlPrzedmiotyZeStudentamiIOcenami() {
     if(i==0) {
         cout<<"Brak uczonych przedmiotow w bazie danych!\n";
     }
+}
+
+vector <Przedmiot*>* Wykladowca::getPrzedmioty(){
+    return &przedmioty;
 }
 
 
