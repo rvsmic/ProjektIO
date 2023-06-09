@@ -172,34 +172,55 @@ int main()
                 }
                 case '2':{  // NIEDOKONCZONE
                     cout<<"\nP R Z E D M I O T Y\n\n";
-                    ((Student*)user)->wyswietlPrzedmioty();
-                    cout << "1 - Sprawdz materialy z przedmiotu\n2 - Sprawdz oceny z przedmiotu\n";
-                    char choice;
-                    cin >> choice;
-                    system("cls");
-                    switch(choice) {
-                        case '1': {
-                            cout<<"Przedmioty na ktore jestes zapisany:\n";
-                            ((Student*)user)->wyswietlPrzedmioty();
-                            cout<<"Podaj nazwe przedmiotu: ";
-                            string przedmiot;
-                            cin>>przedmiot;
-                            ((Student*)user)->sprawdzMaterialy(przedmiot);
+                    map<Przedmiot*, vector<int>>* s_przedmioty = ((Student*)user)->getPrzedmioty();
+                    if(s_przedmioty->empty()){
+                        cout << "Nie znaleziono przedmiotów!\n";
+                        system("pause");
+                        break;
+                    } else {
+                        cout << "Wybierz przedmiot:\n";
+                        for(auto x: *s_przedmioty){
+                            cout << "\t> " << x.first->getNazwa() << "\n";
+                        }
+                        cin >> wybor;
+                        Przedmiot* przedmiot = NULL;
+                        vector<int>& oceny ;
+                        for(auto x: *s_przedmioty){
+                            if(x.first->getNazwa() == wybor){
+                                przedmiot = x.first;
+                                oceny = x.second;
+                                break;
+                            }
+                        }
+                        if(przedmiot == NULL){
+                            cout << "Nie znaleziono przedmiotu o takiej nazwie!\n";
                             system("pause");
                             break;
                         }
-                        case '2': {
-                            cout<<"Przedmioty na ktore jestes zapisany:\n";
-                            ((Student*)user)->wyswietlPrzedmioty();
-                            cout<<"Podaj nazwe przedmiotu: ";
-                            string przedmiot;
-                            cin>>przedmiot;
-                            ((Student*)user)->sprawdzOceny(przedmiot);
-                            system("pause");
-                            break;
+                        system("cls");
+                        cout << "Przedmiot: " << przedmiot->getNazwa() << "\n";
+                        cout << "1 - Sprawdz materialy\n2 - Sprawdz oceny\n";
+                        char choice;
+                        cin >> choice;
+                        system("cls");
+                        switch(choice) {
+                            case '1': {
+                                przedmiot->wyswietlMaterialy();
+                                system("pause");
+                                break;
+                            }
+                            case '2': {
+                                cout << "Oceny: ";
+                                for(int o: oceny){
+                                    cout << o << ", ";
+                                }
+                                cout << "\n";
+                                system("pause");
+                                break;
+                            }
                         }
-                    }
                     break;
+                    }
                 }
                 case '9':{
                     EXIT_FLAG = true;

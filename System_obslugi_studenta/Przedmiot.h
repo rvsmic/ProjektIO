@@ -23,7 +23,6 @@ using namespace std;
 #include "Student.h"
 
 class Student;
-
 class Wykladowca;
 
 class Przedmiot {

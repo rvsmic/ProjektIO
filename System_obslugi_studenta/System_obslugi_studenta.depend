@@ -9,7 +9,7 @@
 1684947058 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1684957058 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
+1685536718 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
 	<iostream>
 	<string>
 
@@ -21,7 +21,7 @@
 	"Wykladowca.h"
 	"Przedmiot.h"
 
-1684957759 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
+1686318361 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
 	<iostream>
 	<string>
 	<vector>
@@ -29,7 +29,7 @@
 	"Student.h"
 	"Narzedzie.h"
 
-1684958274 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
+1686320151 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
 	<iostream>
 	<string>
 	<map>
@@ -37,14 +37,14 @@
 	"Uzytkownik.h"
 	"Przedmiot.h"
 
-1684957112 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
+1686319822 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
 	<iostream>
 	<string>
 	<vector>
 	"Wykladowca.h"
 	"Student.h"
 
-1684958274 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
+1686319826 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
 	<iostream>
 	<string>
 	<vector>
@@ -52,13 +52,13 @@
 	"Przedmiot.h"
 	"Student.h"
 
-1684956949 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
+1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
 	"Przedmiot.h"
 
-1684957617 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
+1686320131 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
 	"Student.h"
 
-1684958359 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
+1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 
 1685610104 source:d:\io\projektio\system_obslugi_studenta\main.cpp
@@ -205,4 +205,18 @@
 	"../Wykladowca.h"
 	<windows.h>
 	<conio.h>
+
+1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\tests\test_class.cpp
+	<iostream>
+	"../Narzedzie.h"
+	"../Przedmiot.h"
+	"../Student.h"
+	"../Uczelnia.h"
+	"../Uzytkownik.h"
+	"../Wykladowca.h"
+	<windows.h>
+	<conio.h>
+
+1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.cpp
+	"Uczelnia.h"
 

@@ -85,3 +85,6 @@ void Student::wyswietlPrzedmioty(){
     }
 }
 
+map<Przedmiot*, vector<int>>* Student::getPrzedmioty(){
+    return &oceny;
+}

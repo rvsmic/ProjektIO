@@ -35,6 +35,7 @@ public:
 	void dodajOcene(Przedmiot* przedmiot, int ocena);
 	void usunOcene(Przedmiot* przedmiot);
 	void wyswietlPrzedmioty();
+	map<Przedmiot*, vector<int>>* getPrzedmioty();
 private:
 	string nrAlbumu;
 	map <Przedmiot*,vector<int> > oceny;
