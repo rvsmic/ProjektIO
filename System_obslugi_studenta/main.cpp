@@ -184,11 +184,11 @@ int main()
                         }
                         cin >> wybor;
                         Przedmiot* przedmiot = NULL;
-                        vector<int>& oceny ;
+                        vector<int>* oceny = NULL;
                         for(auto x: *s_przedmioty){
                             if(x.first->getNazwa() == wybor){
                                 przedmiot = x.first;
-                                oceny = x.second;
+                                oceny = &(x.second);
                                 break;
                             }
                         }
@@ -211,7 +211,7 @@ int main()
                             }
                             case '2': {
                                 cout << "Oceny: ";
-                                for(int o: oceny){
+                                for(int o: *oceny){
                                     cout << o << ", ";
                                 }
                                 cout << "\n";
