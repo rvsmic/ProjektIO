@@ -288,7 +288,7 @@ int main()
 
                             system("cls");
                             cout << "Przedmiot: " << przedmiot->getNazwa() << "\n";
-                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Dodaj studenta do przedmiotu\n0 - Powrot do ekranu domowego\n";
+                            cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Usun ocene\n4 - Dodaj studenta do przedmiotu\n5 - Usun studenta z przedmiotu\n0 - Powrot do ekranu domowego\n";
                             cin>>option;
                             system("cls");
                             switch(option) {
@@ -297,11 +297,8 @@ int main()
                                 }
                                 case '1': {
                                     cout<<"\nD O D A J   M A T E R I A L Y\n\n";
-                                    cout<<"Materialy do przedmiotow:\n";
-                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZMaterialami();
-                                    cout<<"Podaj nazwe przedmiotu: ";
-                                    string przedmiot;
-                                    cin>>przedmiot;
+                                    cout<<"Materialy do przedmiotu:\n";
+                                    przedmiot->wyswietlMaterialy();
                                     cout<<"Podaj link do materialu: ";
                                     string link;
                                     cin>>link;
@@ -311,24 +308,10 @@ int main()
                                 }
                                 case '2': {
                                     cout<<"\nD O D A J   O C E N E\n\n";
-                                    cout<<"Studenci zapisani na przedmioty:\n";
-                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentamiIOcenami();
+                                    cout<<"Studenci zapisani na przedmiot i ich oceny:\n";
+                                    przedmiot->wyswietlStudentowIOceny(przedmiot->getNazwa());
                                     int ocena;
                                     string nrAlbumu;
-                                    cout<<"Podaj nazwe przedmiotu: ";
-                                    cin>>wybor;
-                                    Przedmiot* przedmiot = NULL;
-                                    for(Przedmiot* x: *przedmioty){
-                                        if(x->getNazwa() == wybor){
-                                            przedmiot = x;
-                                            break;
-                                        }
-                                    }
-                                    if(przedmiot == NULL) {
-                                        cout << "Nie ma takiego przedmiotu\n";
-                                        system("pause");
-                                        break;
-                                    }
                                     cout<<"Podaj numer albumu studenta: ";
                                     cin>>nrAlbumu;
                                     bool err = true;
@@ -340,7 +323,6 @@ int main()
                                     }
                                     if(err) {
                                         cout << "Nie ma takiego studenta!\n";
-                                        system("pause");
                                         break;
                                     }
 
@@ -350,30 +332,63 @@ int main()
                                         cout << "Zla ocena, wpisz poprawna: ";
                                         cin>>ocena;
                                     }
-                                    ((Wykladowca*)user)->dodajOcene(przedmiot->getNazwa(),nrAlbumu,ocena);
+                                    ((Wykladowca*)user)->dodajOcene(przedmiot,nrAlbumu,ocena);
                                     break;
                                 }
                                 case '3': {
-                                    cout<<"\nD O D A J   S T U D E N T A   D O   P R Z E D M I O T U\n\n";
-                                    cout<<"Prowadzone przedmioty i zapisani na nie studenci:\n";
-                                    ((Wykladowca*)user)->wyswietlPrzedmiotyZeStudentami();////asdasdasdasdadsadas
-                                    cout<<"Uzytkownicy zarejestrowani w systemie:\n";
-                                    uczelnia->wyswietlUzytkownikow();
+                                    cout<<"\nU S U N   O C E N E\n\n";
+                                    cout<<"Studenci zapisani na przedmiot i ich oceny:\n";
+                                    przedmiot->wyswietlStudentowIOceny(przedmiot->getNazwa());
+                                    int ocena;
                                     string nrAlbumu;
-                                    cout<<"Podaj nazwe przedmiotu: ";
-                                    cin>>wybor;
-                                    Przedmiot* przedmiot = NULL;
-                                    for(Przedmiot* x: *przedmioty){
-                                        if(x->getNazwa() == wybor){
-                                            przedmiot = x;
+                                    cout<<"Podaj numer albumu studenta: ";
+                                    cin>>nrAlbumu;
+                                    bool err = true;
+                                    for(Student* x: *(przedmiot->getStudenci())){
+                                        if(x->getNrAlbumu() == nrAlbumu){
+                                            err = false;
                                             break;
                                         }
                                     }
-                                    if(przedmiot == NULL) {
-                                        cout << "Nie ma takiego przedmiotu\n";
+                                    if(err) {
+                                        cout << "Nie ma takiego studenta!\n";
+                                        break;
+                                    }
+                                    ((Wykladowca*)user)->usunOcene(przedmiot,nrAlbumu);
+                                    break;
+                                }
+                                case '4': {
+                                    cout<<"\nD O D A J   S T U D E N T A   D O   P R Z E D M I O T U\n\n";
+                                    cout<<"Studenci zapisani na "<<przedmiot->getNazwa()<<":\n";
+                                    przedmiot->wyswietlStudentow();
+                                    cout<<"Uzytkownicy zarejestrowani w systemie:\n";
+                                    uczelnia->wyswietlUzytkownikow();
+                                    string nrAlbumu;
+                                    cout<<"Podaj numer albumu studenta: ";
+                                    cin>>nrAlbumu;
+                                    bool err = true;
+                                    for(Uzytkownik* x: *(uczelnia->getUzytkownicy())){
+                                        if(x->czyStudent) {
+                                            if(((Student*)x)->getNrAlbumu() == nrAlbumu){
+                                            err = false;
+                                            break;
+                                        }
+                                        }
+                                    }
+                                    if(err) {
+                                        cout << "Nie ma takiego studenta!\n";
                                         system("pause");
                                         break;
                                     }
+                                    ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
+                                    cout<<"Pomyslnie dodano studenta\n";
+                                    break;
+                                }
+                                case '5': {
+                                    cout<<"\nU S U N   S T U D E N T A   Z   P R Z E D M I O T U\n\n";
+                                    cout<<"Studenci zapisani na "<<przedmiot->getNazwa()<<":\n";
+                                    przedmiot->wyswietlStudentow();
+                                    string nrAlbumu;
                                     cout<<"Podaj numer albumu studenta: ";
                                     cin>>nrAlbumu;
                                     bool err = true;
@@ -388,8 +403,8 @@ int main()
                                         system("pause");
                                         break;
                                     }
-                                    ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(wybor,uczelnia->znajdzStudenta(nrAlbumu));
-                                    cout<<"Pomyslnie dodano studenta\n";
+                                    //((Wykladowca*)user)->usunStudentaZPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
+                                    cout<<"Pomyslnie usunieto studenta\n";
                                     break;
                                 }
                                 default: {
@@ -414,6 +429,7 @@ int main()
                     system("pause");
                     break;
                 }
+                // STUDENT MA ZLE EKRAN SPRAWDZANAI OCEN ZE SCENARIUSZEM, USUWANIE OCEN, DODAWANIE MATERIALOW USUWANIE MATERIALOW STUDENT PWN ZJEBANY RESZYA
             }
         }
         system("cls");

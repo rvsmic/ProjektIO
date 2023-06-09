@@ -38,6 +38,7 @@ public:
 	Student* znajdzStudenta(string nrAlbumu);
 	void wyswietlNarzedzia();
 	void wyswietlUzytkownikow();
+	vector <Uzytkownik*>* getUzytkownicy();
 private:
 	string nazwa;
 	vector <Uzytkownik*> uzytkownicy;

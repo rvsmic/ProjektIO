@@ -29,11 +29,15 @@ string Student::getNrAlbumu() {
 }
 
 void Student::sprawdzOceny(string przedmiot) {
+    bool brakOcen = true;
     for(auto it = oceny.begin(); it != oceny.end(); ++it){
         if((*it).first->getNazwa() == przedmiot){
-            cout << "Oceny z przedmiotu " << przedmiot << ":\n";
             for(auto x = (*it).second.begin(); x!= (*it).second.end(); ++x){
                 cout << (*x) << " ";
+                brakOcen = false;
+            }
+            if(brakOcen) {
+                cout<<"Brak ocen z przedmiotu";
             }
             cout << "\n";
             return;
@@ -55,26 +59,23 @@ void Student::sprawdzMaterialy(string przedmiot) {
 }
 
 void Student::dodajOcene(Przedmiot* przedmiot, int ocena) {
-    try{
-        vector<int> tmp = oceny.at(przedmiot);
-        if(ocena != -1){
-            tmp.push_back(ocena);
-        }
-    }catch(out_of_range){
+    if(ocena != -1){
+        oceny[przedmiot].push_back(ocena);
+    } else {
         vector <int> tmp;
         oceny[przedmiot] = tmp;
-        if(ocena != -1){
-            tmp.push_back(ocena);
-        }
     }
 }
 
 void Student::usunOcene(Przedmiot* przedmiot) {
     try{
-        vector<int> tmp = oceny.at(przedmiot);
-        tmp.pop_back();
+        if(!oceny[przedmiot].empty())
+            oceny[przedmiot].pop_back();
+        else {
+            cout<<"Brak ocen do usuniecia!\n";
+        }
     }catch(out_of_range){
-        cout << "Nie znaleziono przedmiotu!";
+        cout << "Nie znaleziono przedmiotu!\n";
     }
 }
 

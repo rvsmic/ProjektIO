@@ -33,11 +33,11 @@ public:
 	string getIdentyfikator();
 	void dodajPrzedmiot(string nazwa);
 	void usunPrzedmiot(string nazwa);
-	void dodajMaterialy(string przedmiot, string link);
+	void dodajMaterialy(Przedmiot* przedmiot, string link);
 	void usunMaterialy(string przedmiot, string link);
-	void dodajOcene(string przedmiot, string nrAlbumuStudenta, int ocena);
-	void usunOcene(string przedmiot, string nrAlbumuStudenta);
-	void dodajStudentaDoPrzedmiotu(string przedmiot, Student* student);
+	void dodajOcene(Przedmiot* przedmiot, string nrAlbumuStudenta, int ocena);
+	void usunOcene(Przedmiot* przedmiot, string nrAlbumuStudenta);
+	void dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student);
 	void usunStudentaZPrzedmiotu(string przedmiot, Student* student);
 	void wyswietlPrzedmioty();
 	void wyswietlPrzedmiotyZeStudentami();

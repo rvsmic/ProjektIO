@@ -143,3 +143,7 @@ void Uczelnia::wyswietlUzytkownikow(){
      }
 }
 
+vector <Uzytkownik*>* Uczelnia::getUzytkownicy() {
+    return &uzytkownicy;
+}
+

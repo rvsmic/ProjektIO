@@ -43,14 +43,8 @@ void Wykladowca::usunPrzedmiot(string nazwa) {
     cout << "Nie znaleziono przedmiotu z taka nazwa!\n";
 }
 
-void Wykladowca::dodajMaterialy(string przedmiot, string link) {
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->dodajMaterialy(link);
-            return;
-        }
-    }
-    cout<<"Nie ma takiego przedmiotu!n";
+void Wykladowca::dodajMaterialy(Przedmiot* przedmiot, string link) {
+    przedmiot->dodajMaterialy(link);
 }
 
 void Wykladowca::usunMaterialy(string przedmiot, string link) {
@@ -62,32 +56,20 @@ void Wykladowca::usunMaterialy(string przedmiot, string link) {
     }
 }
 
-void Wykladowca::dodajOcene(string przedmiot, string nrAlbumu, int ocena) {
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->znajdzStudenta(nrAlbumu)->dodajOcene((*x), ocena);
-            return;
-        }
+void Wykladowca::dodajOcene(Przedmiot* przedmiot, string nrAlbumu, int ocena) {
+    przedmiot->znajdzStudenta(nrAlbumu)->dodajOcene(przedmiot, ocena);
+}
+
+void Wykladowca::usunOcene(Przedmiot* przedmiot, string nrAlbumu) {
+    Student* stud = przedmiot->znajdzStudenta(nrAlbumu);
+    if(stud != nullptr){
+        stud->usunOcene(przedmiot);
     }
 }
 
-void Wykladowca::usunOcene(string przedmiot, string nrAlbumu) {
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->znajdzStudenta(nrAlbumu)->usunOcene(*x);
-            return;
-        }
-    }
-}
-
-void Wykladowca::dodajStudentaDoPrzedmiotu(string przedmiot, Student* student){
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->dodajStudenta(student);
-            student->dodajOcene((*x), -1);
-            return;
-        }
-    }
+void Wykladowca::dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student){
+    przedmiot->dodajStudenta(student);
+    student->dodajOcene(przedmiot, -1);
 }
 
 void Wykladowca::usunStudentaZPrzedmiotu(string przedmiot, Student* student){
