@@ -35,9 +35,9 @@ public:
 	void setIdentyfikator(string identyfikator);
 	string getIdentyfikator();
 	void dodajPrzedmiot(string nazwa);
-	void usunPrzedmiot(string nazwa);
-	void dodajMaterialy(Przedmiot* przedmiot, string link);
-	void usunMaterialy(Przedmiot* przedmiot, string link);
+	void usunPrzedmiot(Przedmiot* przedmiot);
+	void dodajMaterial(Przedmiot* przedmiot, string link);
+	void usunMaterial(Przedmiot* przedmiot);
 	void dodajOcene(Przedmiot* przedmiot, string nrAlbumuStudenta, int ocena);
 	void usunOcene(Przedmiot* przedmiot, string nrAlbumuStudenta);
 	void dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student);

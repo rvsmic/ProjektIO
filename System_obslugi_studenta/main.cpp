@@ -12,6 +12,8 @@ using std::cout, std::cin;
 using std::string;
 using std::vector;
 
+// pozostaje chyba tylko przejrzec po kolei i sprawdzic czy UI sie zgadza - np. newline przed pause albo takie same wypunktowania
+
 int main()
 {
     Uczelnia* uczelnia = new Uczelnia("UMCS");
@@ -19,7 +21,7 @@ int main()
     Narzedzie* excel = new Narzedzie("Excel", "www.excel.com");
     Narzedzie* word = new Narzedzie("Word", "www.word.com");
 
-    // PrzykÅ‚adowe dane startowe
+    // Przyk³adowe dane startowe
     Uzytkownik* w1 = new Wykladowca("w1", "haslo", "123456");
     Uzytkownik* s1 = new Student("s1", "haslo", "123");
     Uzytkownik* s2 = new Student("s2", "haslo", "456");
@@ -50,9 +52,9 @@ int main()
     ((Wykladowca*)w1)->dodajOcene(p2, ((Student*)s3)->getNrAlbumu(), 2);
     ((Wykladowca*)w1)->dodajOcene(p2, ((Student*)s3)->getNrAlbumu(), 3);
 
-    ((Wykladowca*)w1)->dodajMaterialy(p1, "www.materialy-IO.com");
-    ((Wykladowca*)w1)->dodajMaterialy(p1, "www.materialy-IO2.com");
-    ((Wykladowca*)w1)->dodajMaterialy(p2, "www.materialy-AiSD.com");
+    ((Wykladowca*)w1)->dodajMaterial(p1, "www.materialy-IO.com");
+    ((Wykladowca*)w1)->dodajMaterial(p1, "www.materialy-IO2.com");
+    ((Wykladowca*)w1)->dodajMaterial(p2, "www.materialy-AiSD.com");
     // Koniec danych startowych
 
     uczelnia->dodajNarzedzie(excel);
@@ -75,18 +77,29 @@ int main()
     system("cls");
 
     while(!EXIT_FLAG){
-        cout<<"\nS T R O N A   D O M O W A\n\n";
+        cout<<"\nS T R O N A   D O M O W A";
+        if(user!=NULL) {
+            if(user->czyStudent) {
+                cout<<"   -   P A N E L   S T U D E N T A";
+            } else {
+                cout<<"   -   P A N E L   W Y K L A D O W C Y";
+            }
+        }
+        cout<<"\n\n------------------------------\n\n";
         cout << "Wybierz opcje:\n";
         if(user == NULL){                       // WYLOGOWANY
 
-            cout << "1 - Zaloguj sie\n2 - Zarejestruj sie\n9 - Wyjdz z programu\n";
+            cout << "1 - Zaloguj sie\n2 - Zarejestruj sie\n9 - Wyjdz z programu\n\n";
+            cout<<"------------------------------\n\n";
             cin >> option;
             system("cls");
 
             switch(option){
                 case '1':{                  // LOGOWANIE
                     cout<<"\nL O G O W A N I E\n\n";
-                    cout<<"1 - Logowanie dla studenta\n2 - Logowanie dla wykladowcy\n";
+                    cout<<"------------------------------\n\n";
+                    cout<<"1 - Logowanie dla studenta\n2 - Logowanie dla wykladowcy\n\n";
+                    cout<<"------------------------------\n\n";
                     cin >> option;
                     system("cls");
                     switch(option){
@@ -107,6 +120,7 @@ int main()
                             break;
                         }
                     }
+                    cout<<"------------------------------\n\n";
                     if(error) {
                         error = false;
                         break;
@@ -115,13 +129,16 @@ int main()
                     cin >> login;
                     cout<<"Podaj haslo: ";
                     cin >> haslo;
+                    cout<<"\n------------------------------\n\n";
 
                     user = uczelnia->logowanie(login, haslo, czyStudent);
                     if(user != NULL){
                         break;
                     } else {
-                        cout << "Czy chcesz sie zarejestrowac?\n1 - Tak\n2 - Nie\n";
+                        cout << "Czy chcesz sie zarejestrowac?\n1 - Tak\n2 - Nie\n\n";
+                        cout<<"------------------------------\n\n";
                         cin >> option;
+                        cout<<"\n";
                         if(option == '1'){
                             cout<<"Przejscie do rejestracji...\n";
                             system("pause");
@@ -139,7 +156,9 @@ int main()
                 }
                 case '2':{ // REJESTRACJA
                     cout<<"\nR E J E S T R A C J A\n\n";
-                    cout<<"1 - Rejestracja dla studenta\n2 - Rejestracja dla wykladowcy\n";
+                    cout<<"------------------------------\n\n";
+                    cout<<"1 - Rejestracja dla studenta\n2 - Rejestracja dla wykladowcy\n\n";
+                    cout<<"------------------------------\n\n";
                     cin >> option;
                     system("cls");
                     switch(option){
@@ -160,6 +179,7 @@ int main()
                             break;
                         }
                     }
+                    cout<<"------------------------------\n\n";
                     if(error) {
                         error = false;
                         break;
@@ -169,7 +189,6 @@ int main()
                     cin >> login;
                     cout<<"Podaj haslo: ";
                     cin >> haslo;
-
                     user = uczelnia->rejestracja(login, haslo, czyStudent);
                     if(user == NULL){
                         continue;
@@ -191,26 +210,34 @@ int main()
             }
 
         } else if (user->czyStudent){           // STUDENT
-            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n";
+            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n\n";
+            cout<<"------------------------------\n\n";
             cin >> option;
             system("cls");
             switch(option){
                 case '0':{
                     user->wylogujSie();
                     user = NULL;
+                    system("pause");
                     break;
                 }
                 case '1':{
                     cout<<"\nN A R Z E D Z I A   D Y D A K T Y C Z N E\n\n";
+                    cout<<"------------------------------\n\n";
+                    cout<<"Dostepne narzedzia dydaktyczne:\n";
                     uczelnia->wyswietlNarzedzia();
+                    cout<<"\n------------------------------\n\n";
                     cout << "Wpisz nazwe wybranego oprogramowania: ";
                     cin >> wybor;
+                    cout<<"\n------------------------------\n\n";
                     uczelnia->skorzystajZNarzedzia(wybor);
+                    cout<<"\n";
                     system("pause");
                     break;
                 }
-                case '2':{  // NIEDOKONCZONE
+                case '2':{  // NIEDOKONCZONE ?
                     cout<<"\nP R Z E D M I O T Y\n\n";
+                    cout<<"------------------------------\n\n";
                     map<Przedmiot*, vector<int>>* s_przedmioty = ((Student*)user)->getPrzedmioty();
                     if(s_przedmioty->empty()){
                         cout << "Nie znaleziono przedmiotow!\n";
@@ -221,6 +248,7 @@ int main()
                         for(auto x: *s_przedmioty){
                             cout << "\t> " << x.first->getNazwa() << "\n";
                         }
+                        cout<<"\n------------------------------\n\n";
                         cin >> wybor;
                         Przedmiot* przedmiot = NULL;
                         vector<int> oceny;
@@ -232,23 +260,31 @@ int main()
                             }
                         }
                         if(przedmiot == NULL){
-                            cout << "Nie znaleziono przedmiotu o takiej nazwie!\n";
+                            cout << "Nie znaleziono przedmiotu o takiej nazwie!\n\n";
                             system("pause");
                             break;
                         }
                         system("cls");
-                        cout << "Przedmiot: " << przedmiot->getNazwa() << "\n";
-                        cout << "1 - Materialy\n2 - Oceny\n";
+                        cout << "\nPrzedmiot: " << przedmiot->getNazwa() << "\n\n";
+                        cout<<"------------------------------\n\n";
+                        cout << "1 - Materialy\n2 - Oceny\n\n";
+                        cout<<"------------------------------\n\n";
                         char choice;
                         cin >> choice;
                         system("cls");
                         switch(choice) {
                             case '1': {
+                                cout<<"\nM A T E R I A L Y\n\n";
+                                cout<<"------------------------------\n\n";
+                                cout<<"Linki:\n";
                                 przedmiot->wyswietlMaterialy();
+                                cout<<"\n";
                                 system("pause");
                                 break;
                             }
                             case '2': {
+                                cout<<"\nO C E N Y\n\n";
+                                cout<<"------------------------------\n\n";
                                 cout << "Oceny z przedmiotu " << przedmiot->getNazwa() << ": ";
                                 for(auto it = oceny.begin(); it != oceny.end(); ++it){
                                     cout << *it;
@@ -256,7 +292,12 @@ int main()
                                         cout << ", ";
                                     }
                                 }
-                                cout << "\n";
+                                cout << "\n\n";
+                                system("pause");
+                                break;
+                            }
+                            default: {
+                                cout<<"Brak opcji o kodzie "<<option<<"\n";
                                 system("pause");
                                 break;
                             }
@@ -278,7 +319,8 @@ int main()
             }
 
         } else {                                // WYKLADOWCA
-            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n";
+            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n\n";
+            cout<<"------------------------------\n\n";
             cin >> option;
             system("cls");
             switch(option){
@@ -290,21 +332,27 @@ int main()
                 }
                 case '1':{
                     cout<<"\nN A R Z E D Z I A   D Y D A K T Y C Z N E\n\n";
+                    cout<<"------------------------------\n\n";
                     cout<<"Dostepne oprogramowanie:\n";
                     uczelnia->wyswietlNarzedzia();
+                    cout<<"\n------------------------------\n\n";
                     cout << "Wpisz nazwe wybranego oprogramowania: ";
                     cin >> wybor;
+                    cout<<"\n------------------------------\n\n";
                     uczelnia->skorzystajZNarzedzia(wybor);
+                    cout<<"\n";
                     system("pause");
                     break;
                 }
                 case '2': {
                     cout<<"\nP R Z E D M I O T Y\n\n";
+                    cout<<"------------------------------\n\n";
                     if(((Wykladowca*)user)->getPrzedmioty()->empty()){
                         cout << "Nie znaleziono przedmiotow!\n";
                     } else {
                         ((Wykladowca*)user)->wyswietlPrzedmioty();
                     }
+                    cout<<"\n------------------------------\n\n";
 
                     cout << "Wybierz przedmiot, lub wpisz nazwe dla nowego przedmiotu:\n";
                     cin >> wybor;
@@ -322,11 +370,14 @@ int main()
                         ((Wykladowca*)user)->dodajPrzedmiot(wybor);
                         cout << "Dodano nowy przedmiot \"" << wybor << "\"\n";
                         przedmiot = ((Wykladowca*)user)->getPrzedmioty()->back();
+                        system("pause");
                     }
 
                     system("cls");
-                    cout << "Przedmiot: " << przedmiot->getNazwa() << "\n";
-                    cout<<"1 - Dodaj materialy\n2 - Dodaj ocene\n3 - Usun ostatnia ocene\n4 - Dodaj studenta do przedmiotu\n5 - Usun studenta z przedmiotu\n0 - Powrot do ekranu domowego\n";
+                    cout << "\nPrzedmiot: " << przedmiot->getNazwa() << "\n\n";
+                    cout<<"------------------------------\n\n";
+                    cout<<"1 - Dodaj materialy\n2 - Usun ostatni material\n3 - Dodaj ocene\n4 - Usun ostatnia ocene\n5 - Dodaj studenta do przedmiotu\n6 - Usun studenta z przedmiotu\n7 - Usun przedmiot\n0 - Powrot do ekranu domowego\n\n";
+                    cout<<"------------------------------\n\n";
                     cin>>option;
                     system("cls");
                     switch(option) {
@@ -335,19 +386,31 @@ int main()
                         }
                         case '1': {
                             cout<<"\nD O D A J   M A T E R I A L Y\n\n";
+                            cout<<"------------------------------\n\n";
                             cout<<"Materialy do przedmiotu:\n";
                             przedmiot->wyswietlMaterialy();
+                            cout<<"\n------------------------------\n\n";
                             cout<<"Podaj link do materialu: ";
                             string link;
                             cin>>link;
-                            ((Wykladowca*)user)->dodajMaterialy(przedmiot,link);
-                            cout<<"Pomyslnie dodano material\n";
+                            ((Wykladowca*)user)->dodajMaterial(przedmiot,link);
                             break;
                         }
                         case '2': {
+                            cout<<"\nU S U N   O S T A T N I   M A T E R I A L\n\n";
+                            cout<<"------------------------------\n\n";
+                            cout<<"Materialy do przedmiotu:\n";
+                            przedmiot->wyswietlMaterialy();
+                            cout<<"\n------------------------------\n\n";
+                            ((Wykladowca*)user)->usunMaterial(przedmiot);
+                            break;
+                        }
+                        case '3': {
                             cout<<"\nD O D A J   O C E N E\n\n";
+                            cout<<"------------------------------\n\n";
                             cout<<"Studenci zapisani na przedmiot i ich oceny:\n";
                             przedmiot->wyswietlStudentowIOceny(przedmiot->getNazwa());
+                            cout<<"\n------------------------------\n\n";
                             int ocena;
                             string nrAlbumu;
                             cout<<"Podaj numer albumu studenta: ";
@@ -373,10 +436,12 @@ int main()
                             ((Wykladowca*)user)->dodajOcene(przedmiot,nrAlbumu,ocena);
                             break;
                         }
-                        case '3': {
+                        case '4': {
                             cout<<"\nU S U N  O S T A T N I A  O C E N E\n\n";
+                            cout<<"------------------------------\n\n";
                             cout<<"Studenci zapisani na przedmiot i ich oceny:\n";
                             przedmiot->wyswietlStudentowIOceny(przedmiot->getNazwa());
+                            cout<<"\n------------------------------\n\n";
                             int ocena;
                             string nrAlbumu;
                             cout<<"Podaj numer albumu studenta: ";
@@ -395,12 +460,15 @@ int main()
                             ((Wykladowca*)user)->usunOcene(przedmiot,nrAlbumu);
                             break;
                         }
-                        case '4': {
+                        case '5': {
                             cout<<"\nD O D A J   S T U D E N T A   D O   P R Z E D M I O T U\n\n";
+                            cout<<"------------------------------\n\n";
                             cout<<"Studenci zapisani na "<<przedmiot->getNazwa()<<":\n";
                             przedmiot->wyswietlStudentow();
+                            cout<<"\n------------------------------\n\n";
                             cout<<"Uzytkownicy zarejestrowani w systemie:\n";
                             uczelnia->wyswietlUzytkownikow();
+                            cout<<"\n------------------------------\n\n";
                             string nrAlbumu;
                             cout<<"Podaj numer albumu studenta: ";
                             cin>>nrAlbumu;
@@ -408,33 +476,36 @@ int main()
                             for(Uzytkownik* x: *(uczelnia->getUzytkownicy())){
                                 if(x->czyStudent) {
                                     if(((Student*)x)->getNrAlbumu() == nrAlbumu){
-                                    err = false;
-                                    break;
-                                }
+                                        err = false;
+                                        break;
+                                    }
                                 }
                             }
                             if(err) {
                                 cout << "Nie ma takiego studenta!\n";
-                                system("pause");
                                 break;
                             }
 
                             for(Student* x: *(przedmiot->getStudenci())){
                                 if(x->getNrAlbumu() == nrAlbumu){
                                     cout<<"Student jest juz zapisany na ten przedmiot!\n";
-                                    system("pause");
+                                    err = true;
                                     break;
                                 }
                             }
+                            if(err) {
+                                break;
+                            }
 
                             ((Wykladowca*)user)->dodajStudentaDoPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
-                            cout<<"Pomyslnie dodano studenta\n";
                             break;
                         }
-                        case '5': {
+                        case '6': {
                             cout<<"\nU S U N   S T U D E N T A   Z   P R Z E D M I O T U\n\n";
+                            cout<<"------------------------------\n\n";
                             cout<<"Studenci zapisani na "<<przedmiot->getNazwa()<<":\n";
                             przedmiot->wyswietlStudentow();
+                            cout<<"\n------------------------------\n\n";
                             string nrAlbumu;
                             cout<<"Podaj numer albumu studenta: ";
                             cin>>nrAlbumu;
@@ -446,12 +517,23 @@ int main()
                                 }
                             }
                             if(err) {
-                                cout << "Nie ma takiego studenta!\n";
-                                system("pause");
+                                cout << "Nie ma takiego studenta zapisanego na ten przedmiot!\n";
                                 break;
                             }
                             ((Wykladowca*)user)->usunStudentaZPrzedmiotu(przedmiot,uczelnia->znajdzStudenta(nrAlbumu));
-                            cout<<"Pomyslnie usunieto studenta\n";
+                            break;
+                        }
+                        case '7': {
+                            cout<<"\nU S U N   P R Z E D M I O T\n\n";
+                            cout<<"------------------------------\n\n";
+                            string conf;
+                            cout<<"Potwierdz usuniecie przedmiotu "<<przedmiot->getNazwa()<<" komenda \"USUN\": ";
+                            cin>>conf;
+                            if(conf == "USUN") {
+                                ((Wykladowca*)user)->usunPrzedmiot(przedmiot);
+                            } else {
+                                cout<<"Niepoprawna opcja, powrot do ekranu glownego...\n\n";
+                            }
                             break;
                         }
                         default: {
@@ -475,12 +557,11 @@ int main()
                 }
             }
         }
-        // STUDENT MA ZLE EKRAN SPRAWDZANAI OCEN ZE SCENARIUSZEM, USUWANIE OCEN, DODAWANIE MATERIALOW USUWANIE MATERIALOW STUDENT PWN ZJEBANY RESZYA
         system("cls");
     }
 
     // Destruktor klasy Uczelnia, usuwa wszystkie obiekty typu Narzedzie oraz Uzytkownik (Student, Wykladowca)
-    // Destruktor klasy Wykladowca usuwa rÃ³wnieÅ¼ wszystkie obiekty typu Przedmiot
+    // Destruktor klasy Wykladowca usuwa równie¿ wszystkie obiekty typu Przedmiot
     // W rezultacie destruktor klasy Uczelnia usuwa wszystkie obiekty powiazane z obiektem uczelnia.
     delete uczelnia;
 

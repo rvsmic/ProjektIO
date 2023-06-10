@@ -44,7 +44,6 @@ void Student::sprawdzOceny(string przedmiot) {
             if(brakOcen) {
                 cout<<"Brak ocen z przedmiotu";
             }
-            cout << "\n";
             return;
         }
     }
@@ -92,4 +91,9 @@ void Student::wyswietlPrzedmioty(){
 
 map<Przedmiot*, vector<int>>* Student::getPrzedmioty(){
     return &oceny;
+}
+
+void Student::usunZPrzedmiotu(Przedmiot* przedmiot) {
+    oceny[przedmiot].clear();
+    oceny.erase(przedmiot);
 }

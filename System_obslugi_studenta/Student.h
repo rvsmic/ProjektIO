@@ -30,7 +30,7 @@ class Przedmiot;
 class Student : public Uzytkownik {
 public:
 	Student(string login, string haslo, string nrAlbumu);
-	~Student();	
+	~Student();
 	void setNrAlbumu(string numer);
 	string getNrAlbumu();
 	void sprawdzOceny(string przedmiot);
@@ -39,6 +39,7 @@ public:
 	void usunOcene(Przedmiot* przedmiot);
 	void wyswietlPrzedmioty();
 	map<Przedmiot*, vector<int>>* getPrzedmioty();
+	void usunZPrzedmiotu(Przedmiot* przedmiot);
 private:
 	string nrAlbumu;
 	map <Przedmiot*,vector<int> > oceny;

@@ -24,7 +24,7 @@ Wykladowca::~Wykladowca() {
     for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
         delete (*x);
     }
-    
+
     cout << "Usunieto obiekt klasy " << "Wykladowca!\n";
 }
 
@@ -41,26 +41,42 @@ void Wykladowca::dodajPrzedmiot(string nazwa) {
     this->przedmioty.push_back(przedmiot);
 }
 
-void Wykladowca::usunPrzedmiot(string nazwa) {
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == nazwa){
+// troche wyglada mi jak kompozycja...
+void Wykladowca::usunPrzedmiot(Przedmiot* przedmiot) {
+    for(auto student: *(przedmiot->getStudenci())) {
+        usunStudentaZPrzedmiotu(przedmiot,student);
+    }
+    for(auto x=przedmioty.begin();x!=przedmioty.end();++x) {
+        if((*x) == przedmiot) {
             przedmioty.erase(x);
-            return;
+            break;
         }
     }
-    cout << "Nie znaleziono przedmiotu z taka nazwa!\n";
+
+
+
+
+
+    // co z przedmiotem bo nw czy moge tutaj usunac deletem jak to asocjacja????
+
+
+
+
+
+    cout<<"Pomyslnie usunieto przedmiot!\n";
+}
+// ZMIANA NAZWY BO BEZ SENSU
+void Wykladowca::dodajMaterial(Przedmiot* przedmiot, string link) {
+    przedmiot->dodajMaterial(link);
 }
 
-void Wykladowca::dodajMaterialy(Przedmiot* przedmiot, string link) {
-    przedmiot->dodajMaterialy(link);
-}
-
-void Wykladowca::usunMaterialy(Przedmiot* przedmiot, string link) {
-    przedmiot->usunMaterialy(link);
+void Wykladowca::usunMaterial(Przedmiot* przedmiot) {
+    przedmiot->usunMaterial();
 }
 
 void Wykladowca::dodajOcene(Przedmiot* przedmiot, string nrAlbumu, int ocena) {
     przedmiot->znajdzStudenta(nrAlbumu)->dodajOcene(przedmiot, ocena);
+    cout<<"Pomyslnie dodano ocene "<<ocena<<" studentowi o nr. albumu "<<nrAlbumu<<"!\n";
 }
 
 void Wykladowca::usunOcene(Przedmiot* przedmiot, string nrAlbumu) {
@@ -68,16 +84,20 @@ void Wykladowca::usunOcene(Przedmiot* przedmiot, string nrAlbumu) {
     if(stud != nullptr){
         stud->usunOcene(przedmiot);
     }
+    cout<<"Pomyslnie usunieto ostatnia ocene!\n";
 }
 
 void Wykladowca::dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student){
     przedmiot->dodajStudenta(student);
     student->dodajOcene(przedmiot, -1);
+    cout<<"Pomyslnie dodano studenta do przedmiotu!\n";
 }
 
 void Wykladowca::usunStudentaZPrzedmiotu(Przedmiot* przedmiot, Student* student){
+    student->usunZPrzedmiotu(przedmiot);
     przedmiot->usunStudenta(student);
-       
+    cout<<"Pomyslnie usunieto studenta z przedmiotu!\n";
+
 }
 
 void Wykladowca::wyswietlPrzedmioty() {
@@ -99,7 +119,7 @@ void Wykladowca::wyswietlPrzedmiotyZeStudentami() {
         ++i;
     }
     if(i==0) {
-        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
     }
 }
 
@@ -111,7 +131,7 @@ void Wykladowca::wyswietlPrzedmiotyZMaterialami() {
         ++i;
     }
     if(i==0) {
-        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
     }
 }
 
@@ -123,7 +143,7 @@ void Wykladowca::wyswietlPrzedmiotyZeStudentamiIOcenami() {
         ++i;
     }
     if(i==0) {
-        cout<<"Brak uczonych przedmiotow w bazie danych!\n";
+        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
     }
 }
 

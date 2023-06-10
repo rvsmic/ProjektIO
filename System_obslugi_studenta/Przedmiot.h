@@ -30,13 +30,13 @@ class Wykladowca;
 class Przedmiot {
 public:
 	Przedmiot(string nazwa, Wykladowca* wykladowca);
-	~Przedmiot();	
+	~Przedmiot();
 	void setNazwa(string nazwa);
 	string getNazwa();
 	void setWykladowca(Wykladowca* wykladowca);
 	Wykladowca* getWykladowca();
-	void dodajMaterialy(string link);
-	void usunMaterialy(string link);
+	void dodajMaterial(string link);
+	void usunMaterial();
 	void wyswietlMaterialy();
 	void dodajStudenta(Student* student);
 	void usunStudenta(Student* student);

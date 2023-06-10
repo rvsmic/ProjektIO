@@ -38,18 +38,18 @@ Wykladowca* Przedmiot::getWykladowca() {
     return this->wykladowca;
 }
 
-void Przedmiot::dodajMaterialy(string link) {
+void Przedmiot::dodajMaterial(string link) {
     materialy.push_back(link);
+    cout<<"Pomyslnie dodano material!\n";
 }
 
-void Przedmiot::usunMaterialy(string link) {
-    for(auto x = materialy.begin(); x != materialy.end(); ++x){
-        if((*x) == link){
-            materialy.erase(x);
-            return;
-        }
+void Przedmiot::usunMaterial() {
+    if(!materialy.empty()) {
+        materialy.pop_back();
+        cout<<"Pomyslnie usunieto ostatni material!\n";
+        return;
     }
-    cout << "Nie znaleziono takiego linku!\n";
+    cout << "Brak materialow w bazie!\n";
 }
 
 void Przedmiot::wyswietlMaterialy() {
