@@ -16,7 +16,8 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cout, std::cin;
+using std::string;
 
 class Uzytkownik {
 public:

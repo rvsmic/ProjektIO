@@ -17,7 +17,8 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+using std::cout, std::cin;
+using std::string;
 
 #include "Uzytkownik.h"
 #include "Student.h"
@@ -26,6 +27,7 @@ using namespace std;
 class Uczelnia {
 public:
 	Uczelnia(string nazwa);
+	~Uczelnia();
 	void setNazwa(string nazwa);
 	string getNazwa();
 	void dodajUzytkownika(Uzytkownik* uzytkownik);

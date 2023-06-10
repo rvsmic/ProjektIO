@@ -20,6 +20,11 @@ Student::Student(string login, string haslo, string nrAlbumu) {
     this->czyStudent = true;
 }
 
+Student::~Student() {
+    cout << "Usunieto obiekt klasy " << "Student!\n";
+
+}
+
 void Student::setNrAlbumu(string numer) {
     this->nrAlbumu = numer;
 }
@@ -74,7 +79,7 @@ void Student::usunOcene(Przedmiot* przedmiot) {
         else {
             cout<<"Brak ocen do usuniecia!\n";
         }
-    }catch(out_of_range){
+    }catch(std::out_of_range){
         cout << "Nie znaleziono przedmiotu!\n";
     }
 }

@@ -18,7 +18,9 @@
 #include <map>
 #include <vector>
 
-using namespace std;
+using std::cout, std::cin;
+using std::string;
+using std::map;
 
 #include "Uzytkownik.h"
 #include "Przedmiot.h"
@@ -28,6 +30,7 @@ class Przedmiot;
 class Student : public Uzytkownik {
 public:
 	Student(string login, string haslo, string nrAlbumu);
+	~Student();	
 	void setNrAlbumu(string numer);
 	string getNrAlbumu();
 	void sprawdzOceny(string przedmiot);

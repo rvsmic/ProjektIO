@@ -16,6 +16,19 @@ Uczelnia::Uczelnia(string nazwa) {
     this->nazwa = nazwa;
 }
 
+Uczelnia::~Uczelnia() {
+    for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
+        delete *x;
+    }
+
+    for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
+        if((*x)->czyStudent) delete (Student*)*x;
+        else delete (Wykladowca*)*x;
+    }
+
+    cout << "Usunieto obiekt klasy " << "Uczelnia!\n";
+}
+
 void Uczelnia::setNazwa(string nazwa) {
     this->nazwa = nazwa;
 }
@@ -31,6 +44,7 @@ void Uczelnia::dodajUzytkownika(Uzytkownik* uzytkownik) {
 void Uczelnia::usunUzytkownika(string login) {
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login){
+            delete *x;
             uzytkownicy.erase(x);
             return;
         }
@@ -44,6 +58,7 @@ void Uczelnia::dodajNarzedzie(Narzedzie* narzedzie) {
 void Uczelnia::usunNarzedzie(string nazwa) {
     for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
         if((*x)->getNazwa() == nazwa){
+            delete *x;
             narzedzia.erase(x);
             return;
         }

@@ -20,6 +20,14 @@ Wykladowca::Wykladowca(string login, string haslo, string identyfikator) {
     this->czyStudent = false;
 }
 
+Wykladowca::~Wykladowca() {
+    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
+        delete (*x);
+    }
+    
+    cout << "Usunieto obiekt klasy " << "Wykladowca!\n";
+}
+
 void Wykladowca::setIdentyfikator(string identyfikator) {
     this->identyfikator = identyfikator;
 }
@@ -47,13 +55,8 @@ void Wykladowca::dodajMaterialy(Przedmiot* przedmiot, string link) {
     przedmiot->dodajMaterialy(link);
 }
 
-void Wykladowca::usunMaterialy(string przedmiot, string link) {
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->usunMaterialy(link);
-            return;
-        }
-    }
+void Wykladowca::usunMaterialy(Przedmiot* przedmiot, string link) {
+    przedmiot->usunMaterialy(link);
 }
 
 void Wykladowca::dodajOcene(Przedmiot* przedmiot, string nrAlbumu, int ocena) {
@@ -72,15 +75,11 @@ void Wykladowca::dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* studen
     student->dodajOcene(przedmiot, -1);
 }
 
-void Wykladowca::usunStudentaZPrzedmiotu(string przedmiot, Student* student){
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        if((*x)->getNazwa() == przedmiot){
-            (*x)->usunStudenta(student);
-            return;
-        }
-    }
+void Wykladowca::usunStudentaZPrzedmiotu(Przedmiot* przedmiot, Student* student){
+    przedmiot->usunStudenta(student);
+       
 }
-// DODANE - CO NAJMNIEJ TO
+
 void Wykladowca::wyswietlPrzedmioty() {
     int i=0;
     for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){

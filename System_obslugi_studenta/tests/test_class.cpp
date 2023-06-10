@@ -7,3 +7,4 @@
 #include "../Wykladowca.h"
 #include <windows.h>
 #include <conio.h>
+

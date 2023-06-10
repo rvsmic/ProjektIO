@@ -16,11 +16,13 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cout, std::cin;
+using std::string;
 
 class Narzedzie {
 public:
 	Narzedzie(string nazwa, string link);
+	~Narzedzie();
 	void setNazwa(string nazwa);
 	string getNazwa();
 	void setLink(string link);

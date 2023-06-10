@@ -17,7 +17,9 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+using std::cout, std::cin;
+using std::string;
+using std::vector;
 
 #include "Wykladowca.h"
 #include "Student.h"
@@ -28,6 +30,7 @@ class Wykladowca;
 class Przedmiot {
 public:
 	Przedmiot(string nazwa, Wykladowca* wykladowca);
+	~Przedmiot();	
 	void setNazwa(string nazwa);
 	string getNazwa();
 	void setWykladowca(Wykladowca* wykladowca);

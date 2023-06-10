@@ -18,6 +18,10 @@ Przedmiot::Przedmiot(string nazwa, Wykladowca* wykladowca) {
     this->wykladowca = wykladowca;
 }
 
+Przedmiot::~Przedmiot() {
+    cout << "Usunieto obiekt klasy " << "Przedmiot!\n";
+}
+
 void Przedmiot::setNazwa(string nazwa) {
     this->nazwa = nazwa;
 }

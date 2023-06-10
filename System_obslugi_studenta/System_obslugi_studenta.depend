@@ -1,27 +1,29 @@
 # depslib dependency file v1.0
-1684955565 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.cpp
+1686406568 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.cpp
 	"Narzedzie.h"
 
-1684946200 c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.h
+1686407474 c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.h
 	<iostream>
 	<string>
 
 1684947058 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1685536718 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
+1686407492 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
 	<iostream>
 	<string>
 
-1684956660 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\main.cpp
+1686409657 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\main.cpp
 	<iostream>
+	<windows.h>
+	<conio.h>
 	"Uczelnia.h"
 	"Uzytkownik.h"
 	"Student.h"
 	"Wykladowca.h"
 	"Przedmiot.h"
 
-1686318361 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
+1686407489 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
 	<iostream>
 	<string>
 	<vector>
@@ -29,7 +31,7 @@
 	"Student.h"
 	"Narzedzie.h"
 
-1686320151 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
+1686407515 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
 	<iostream>
 	<string>
 	<map>
@@ -37,14 +39,14 @@
 	"Uzytkownik.h"
 	"Przedmiot.h"
 
-1686319822 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
+1686407534 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
 	<iostream>
 	<string>
 	<vector>
 	"Wykladowca.h"
 	"Student.h"
 
-1686319826 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
+1686410374 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
 	<iostream>
 	<string>
 	<vector>
@@ -52,13 +54,13 @@
 	"Przedmiot.h"
 	"Student.h"
 
-1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
+1686406570 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
 	"Przedmiot.h"
 
-1686320131 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
+1686407525 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
 	"Student.h"
 
-1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
+1686406569 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 
 1685610104 source:d:\io\projektio\system_obslugi_studenta\main.cpp
@@ -206,7 +208,7 @@
 	<windows.h>
 	<conio.h>
 
-1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\tests\test_class.cpp
+1686408214 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\tests\test_class.cpp
 	<iostream>
 	"../Narzedzie.h"
 	"../Przedmiot.h"
@@ -217,6 +219,6 @@
 	<windows.h>
 	<conio.h>
 
-1686318361 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.cpp
+1686408213 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.cpp
 	"Uczelnia.h"
 

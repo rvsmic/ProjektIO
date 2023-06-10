@@ -18,6 +18,10 @@ Narzedzie::Narzedzie(string nazwa, string link) {
     this->link = link;
 }
 
+Narzedzie::~Narzedzie() {
+    cout << "Usunieto obiekt klasy " << "Narzedzie!\n";
+}
+
 void Narzedzie::setNazwa(string nazwa) {
     this->nazwa = nazwa;
 }
