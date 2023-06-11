@@ -103,43 +103,7 @@ void Wykladowca::usunStudentaZPrzedmiotu(Przedmiot* przedmiot, Student* student)
 void Wykladowca::wyswietlPrzedmioty() {
     int i=0;
     for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        cout<<" - "<<(*x)->getNazwa()<<"\n";
-        ++i;
-    }
-    if(i==0) {
-        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
-    }
-}
-
-void Wykladowca::wyswietlPrzedmiotyZeStudentami() {
-    int i=0;
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        cout<<" - "<<(*x)->getNazwa()<<"\n";
-        (*x)->wyswietlStudentow();
-        ++i;
-    }
-    if(i==0) {
-        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
-    }
-}
-
-void Wykladowca::wyswietlPrzedmiotyZMaterialami() {
-    int i=0;
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        cout<<" - "<<(*x)->getNazwa()<<"\n";
-        (*x)->wyswietlMaterialy();
-        ++i;
-    }
-    if(i==0) {
-        cout<<"Brak prowadzonych przedmiotow w bazie danych!\n";
-    }
-}
-
-void Wykladowca::wyswietlPrzedmiotyZeStudentamiIOcenami() {
-    int i=0;
-    for(auto x = przedmioty.begin(); x != przedmioty.end(); x++){
-        cout<<" - "<<(*x)->getNazwa()<<"\n";
-        (*x)->wyswietlStudentowIOceny((*x)->getNazwa());
+        cout<<"\t> "<<(*x)->getNazwa()<<"\n";
         ++i;
     }
     if(i==0) {

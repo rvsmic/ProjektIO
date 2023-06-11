@@ -43,9 +43,6 @@ public:
 	void dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student);
 	void usunStudentaZPrzedmiotu(Przedmiot* przedmiot, Student* student);
 	void wyswietlPrzedmioty();
-	void wyswietlPrzedmiotyZeStudentami();
-	void wyswietlPrzedmiotyZMaterialami();
-	void wyswietlPrzedmiotyZeStudentamiIOcenami();
 	vector <Przedmiot*>* getPrzedmioty();
 private:
 	string identyfikator;

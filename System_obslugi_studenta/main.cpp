@@ -144,11 +144,13 @@ int main()
                             system("pause");
                             system("cls");
                         } else if (option == '2'){
-                            cout<<"Powrot do ekranu poczatkowego...\n";
+                            system("cls");
+                            cout<<"Powrot do ekranu poczatkowego...\n\n";
                             system("pause");
                             break;
                         } else {
-                            cout<<"Bledna opcja, powrot do ekranu poczatkowego...\n";
+                            system("cls");
+                            cout<<"Bledna opcja, powrot do ekranu poczatkowego...\n\n";
                             system("pause");
                             break;
                         }
@@ -173,7 +175,7 @@ int main()
                             break;
                         }
                         default: {
-                            cout<<"Brak opcji o kodzie "<<option<<"\n";
+                            cout<<"Brak opcji o kodzie "<<option<<"\n\n";
                             error = true;
                             system("pause");
                             break;
@@ -350,6 +352,7 @@ int main()
                     if(((Wykladowca*)user)->getPrzedmioty()->empty()){
                         cout << "Nie znaleziono przedmiotow!\n";
                     } else {
+                        cout<<"Prowadzone przedmioty:\n";
                         ((Wykladowca*)user)->wyswietlPrzedmioty();
                     }
                     cout<<"\n------------------------------\n\n";
@@ -442,7 +445,6 @@ int main()
                             cout<<"Studenci zapisani na przedmiot i ich oceny:\n";
                             przedmiot->wyswietlStudentowIOceny(przedmiot->getNazwa());
                             cout<<"\n------------------------------\n\n";
-                            int ocena;
                             string nrAlbumu;
                             cout<<"Podaj numer albumu studenta: ";
                             cin>>nrAlbumu;

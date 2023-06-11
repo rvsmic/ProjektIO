@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1686437542 source:f:\io\projektio\system_obslugi_studenta\main.cpp
+1686479366 source:f:\io\projektio\system_obslugi_studenta\main.cpp
 	<iostream>
 	<windows.h>
 	<conio.h>
@@ -36,7 +36,7 @@
 	"Wykladowca.h"
 	"Student.h"
 
-1686437864 f:\io\projektio\system_obslugi_studenta\wykladowca.h
+1686479734 f:\io\projektio\system_obslugi_studenta\wykladowca.h
 	<iostream>
 	<string>
 	<vector>
@@ -68,12 +68,12 @@
 	<windows.h>
 	<conio.h>
 
-1686425746 source:f:\io\projektio\system_obslugi_studenta\uczelnia.cpp
+1686479536 source:f:\io\projektio\system_obslugi_studenta\uczelnia.cpp
 	"Uczelnia.h"
 
 1685010432 source:f:\io\projektio\system_obslugi_studenta\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1686436062 source:f:\io\projektio\system_obslugi_studenta\wykladowca.cpp
+1686479302 source:f:\io\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 

@@ -71,9 +71,6 @@ Uzytkownik* Uczelnia::logowanie(string login, string haslo, bool czyStudent) {
         return NULL;
     }
 
-    //if(czyStudent) cout << "Logowanie dla studenta...\n";
-    //else cout << "Logowanie dla wykladowcy...\n";
-
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login && (*x)->czyStudent == czyStudent){
             if((*x)->getHaslo() == haslo){
@@ -90,9 +87,6 @@ Uzytkownik* Uczelnia::logowanie(string login, string haslo, bool czyStudent) {
 }
 
 Uzytkownik* Uczelnia::rejestracja(string login, string haslo, bool czyStudent) {
-    //if(czyStudent) cout << "Rejestracja dla studenta...\n";
-    //else cout << "Rejestracja dla wykladowcy...\n";
-
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->getLogin() == login){
             cout << "Konto z podanym loginem juz istnieje!\n";
@@ -144,16 +138,16 @@ Student* Uczelnia::znajdzStudenta(string nrAlbumu){
 
 void Uczelnia::wyswietlNarzedzia(){
     for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
-        cout << "\t- " << (*x)->getNazwa() << "(" << (*x)->getLink() << ")\n";
+        cout << "\t> " << (*x)->getNazwa() << " (" << (*x)->getLink() << ")\n";
      }
 }
 
 void Uczelnia::wyswietlUzytkownikow(){
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->czyStudent) {
-            cout<<" - STUDENT - nr Albumu: "<<((Student*)(*x))->getNrAlbumu()<<", Login: "<<(*x)->getLogin()<<"\n";
+            cout<<"\t> STUDENT - nr Albumu: "<<((Student*)(*x))->getNrAlbumu()<<", Login: "<<(*x)->getLogin()<<"\n";
         } else {
-            cout<<" - WYKLADOWCA - nr Identyfikatora: "<<((Wykladowca*)(*x))->getIdentyfikator()<<", Login: "<<(*x)->getLogin()<<"\n";
+            cout<<"\t> WYKLADOWCA - nr Identyfikatora: "<<((Wykladowca*)(*x))->getIdentyfikator()<<", Login: "<<(*x)->getLogin()<<"\n";
         }
      }
 }
