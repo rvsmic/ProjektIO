@@ -17,5 +17,5 @@
 
 	Warunki końcowe: Użytkownik pomyślnie dodał materiały do systemu dla wybranego przedmiotu.
 
-	Źródła możliwych błędów: Zbyt duży rozmiar pliku, konflikt nazw plików.
+	Źródła możliwych błędów: Konflikt nazw plików.
 				 

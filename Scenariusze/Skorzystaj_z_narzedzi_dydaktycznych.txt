@@ -1,5 +1,5 @@
 - Skorzystaj z narzedzi dydaktycznych
- 	Przypadek użycia: Użytkownik korzysta z narzedzi dydaktycznych
+ 	Przypadek użycia: Użytkownik korzysta z narzędzi dydaktycznych
 
 	Scenariusz: Użytkownik otwiera repozytorium narzędzi.
 
@@ -9,7 +9,7 @@
 
 	Opis: Użytkownik uruchamia system i loguje się. Wybiera sekcję "narzędzia dydaktyczne" i
 	wybiera pożądane narzędzie. Następuje przekierowanie i system uruchamia sesję w wybranym programie. 
-	(Po skorzystaniu z wybranego narzędzia, użytkownik opuszcza środowisko, a sesja się zamyka).
+	Po skorzystaniu z wybranego narzędzia, użytkownik opuszcza środowisko, a sesja się zamyka.
 
 	Warunki końcowe: Użytkownik uzyskał dostęp do wybranego narzędzia.
 

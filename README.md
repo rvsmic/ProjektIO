@@ -32,3 +32,11 @@
 * Wyrównać metody w staruml / cpp :heavy_check_mark:
 * Dokonczyc implementację :grey_question: (*Użytkownik jako klasa abstrakcyjna, użyteczność niektórych metod*)
 * Zacząć testy
+
+## Tydzień IV
+
+### TODO:
+* Poprawić sequence diagram
+* Przejrzeć kod i pousuwać ewentualne komentarze
+* Przejrzeć raport i wygenerować kopie dla każdego
+* TESTY + dodać je do raportu
