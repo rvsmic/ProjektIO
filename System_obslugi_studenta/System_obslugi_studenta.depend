@@ -54,7 +54,7 @@
 1686433024 source:f:\io\projektio\system_obslugi_studenta\przedmiot.cpp
 	"Przedmiot.h"
 
-1686436004 source:f:\io\projektio\system_obslugi_studenta\student.cpp
+1686591482 source:f:\io\projektio\system_obslugi_studenta\student.cpp
 	"Student.h"
 
 1686425752 source:f:\io\projektio\system_obslugi_studenta\tests\test_class.cpp
@@ -74,6 +74,6 @@
 1685010432 source:f:\io\projektio\system_obslugi_studenta\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1686479302 source:f:\io\projektio\system_obslugi_studenta\wykladowca.cpp
+1686591798 source:f:\io\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 

@@ -56,13 +56,12 @@ void Wykladowca::usunPrzedmiot(Przedmiot* przedmiot) {
 
 
 
-
     // co z przedmiotem bo nw czy moge tutaj usunac deletem jak to asocjacja????
 
 
 
 
-
+    delete przedmiot;
     cout<<"Pomyslnie usunieto przedmiot!\n";
 }
 // ZMIANA NAZWY BO BEZ SENSU
@@ -84,7 +83,6 @@ void Wykladowca::usunOcene(Przedmiot* przedmiot, string nrAlbumu) {
     if(stud != nullptr){
         stud->usunOcene(przedmiot);
     }
-    cout<<"Pomyslnie usunieto ostatnia ocene!\n";
 }
 
 void Wykladowca::dodajStudentaDoPrzedmiotu(Przedmiot* przedmiot, Student* student){

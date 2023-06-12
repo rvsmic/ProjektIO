@@ -72,14 +72,11 @@ void Student::dodajOcene(Przedmiot* przedmiot, int ocena) {
 }
 
 void Student::usunOcene(Przedmiot* przedmiot) {
-    try{
-        if(!oceny[przedmiot].empty())
-            oceny[przedmiot].pop_back();
-        else {
-            cout<<"Brak ocen do usuniecia!\n";
-        }
-    }catch(std::out_of_range){
-        cout << "Nie znaleziono przedmiotu!\n";
+    if(!oceny[przedmiot].empty()) {
+        oceny[przedmiot].pop_back();
+        cout<<"Pomyslnie usunieto ostatnia ocene!\n";
+    } else {
+        cout<<"Brak ocen do usuniecia!\n";
     }
 }
 

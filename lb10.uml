@@ -3491,8 +3491,8 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[6]" type="UMLFinalStateView" guid="DGx40MBKwEG0JqikRdLfTQAA">
-<XPD:ATTR name="Left" type="integer">704</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">168</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">708</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">164</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">26</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">26</XPD:ATTR>
 <XPD:REF name="Model">hKFc6NGkfkiCdhPvzxXFpAAA</XPD:REF>
@@ -3564,7 +3564,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[10]" type="UMLTransitionView" guid="rlxais202UyTNd3EOkaXwAAA">
-<XPD:ATTR name="Points" type="Points">615,177;704,180</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">615,175;708,176</XPD:ATTR>
 <XPD:REF name="Model">IrrZZ5cyEkKlrYR01ULhrgAA</XPD:REF>
 <XPD:REF name="Head">DGx40MBKwEG0JqikRdLfTQAA</XPD:REF>
 <XPD:REF name="Tail">VPS9jkkZakSVXQzEG28whAAA</XPD:REF>
@@ -6407,7 +6407,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="RsGTyPimQEmlpe10MxCwtAAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">14 : dodajMaterialy()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">14 : dodajMaterial()</XPD:ATTR>
 <XPD:REF name="Model">JKlNOFh0KkC3WRbKOBrt5QAA</XPD:REF>
 <XPD:REF name="HostEdge">nHNYCeIKJU+mqhgjlQMcuwAA</XPD:REF>
 </XPD:OBJ>
@@ -6441,7 +6441,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Etl0NXWpVkq44ipBAgK4pgAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">15 : dodajMaterialy()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">15 : dodajMaterial()</XPD:ATTR>
 <XPD:REF name="Model">0Jj+APIxqk6RZ+g0guPmwwAA</XPD:REF>
 <XPD:REF name="HostEdge">7+MzdTU14EeJ5jhidiBEpwAA</XPD:REF>
 </XPD:OBJ>
@@ -6475,7 +6475,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="c5rvTkN2XUa1GtHz5MUOlwAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">16 : dodajMaterialy()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">16 : dodajMaterial()</XPD:ATTR>
 <XPD:REF name="Model">j0THismKkUiOQXHyZSZVgwAA</XPD:REF>
 <XPD:REF name="HostEdge">Ci+GSMPW4Emx9+y6y5AuswAA</XPD:REF>
 </XPD:OBJ>
@@ -6509,7 +6509,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="YaOMv8+4WEidcA7gVe08LAAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">17 : dodajMaterialy()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">17 : dodajMaterial()</XPD:ATTR>
 <XPD:REF name="Model">5mu9JCP6J060aLGC4f1efgAA</XPD:REF>
 <XPD:REF name="HostEdge">yVptdvY7DEKqQlhJrp6m0AAA</XPD:REF>
 </XPD:OBJ>
