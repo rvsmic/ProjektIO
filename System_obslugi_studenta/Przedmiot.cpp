@@ -78,7 +78,7 @@ Student* Przedmiot::znajdzStudenta(string nrAlbumu){
         }
     }
     cout<<"Nie ma takiego studenta!\n";
-    return nullptr;
+    return NULL;
 }
 
 void Przedmiot::wyswietlStudentow() {

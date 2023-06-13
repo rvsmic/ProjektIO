@@ -20,6 +20,42 @@ int main()
     Narzedzie* excel = new Narzedzie("Excel", "www.excel.com");
     Narzedzie* word = new Narzedzie("Word", "www.word.com");
 
+    // Przykladowe dane startowe
+    Uzytkownik* w1 = new Wykladowca("w1", "haslo", "123456");
+    Uzytkownik* s1 = new Student("s1", "haslo", "123");
+    Uzytkownik* s2 = new Student("s2", "haslo", "456");
+    Uzytkownik* s3 = new Student("s3", "haslo", "789");
+
+    uczelnia->dodajUzytkownika(w1);
+    uczelnia->dodajUzytkownika(s1);
+    uczelnia->dodajUzytkownika(s2);
+    uczelnia->dodajUzytkownika(s3);
+
+    ((Wykladowca*)w1)->dodajPrzedmiot("IO");
+    ((Wykladowca*)w1)->dodajPrzedmiot("AiSD");
+
+    Przedmiot* p1 = ((Wykladowca*)w1)->getPrzedmioty()->at(0);
+    Przedmiot* p2 = ((Wykladowca*)w1)->getPrzedmioty()->at(1);
+
+    // p1 (IO) - w1 (wykladowca) - s1, s2 (studenci)
+    // p2 (AiSD) - w1 (wykladowca) - s1, s3 (studenci)
+    ((Wykladowca*)w1)->dodajStudentaDoPrzedmiotu(p1, (Student*)s1);
+    ((Wykladowca*)w1)->dodajStudentaDoPrzedmiotu(p1, (Student*)s2);
+    ((Wykladowca*)w1)->dodajStudentaDoPrzedmiotu(p2, (Student*)s1);
+    ((Wykladowca*)w1)->dodajStudentaDoPrzedmiotu(p2, (Student*)s3);
+
+    ((Wykladowca*)w1)->dodajOcene(p1, ((Student*)s1)->getNrAlbumu(), 5);
+    ((Wykladowca*)w1)->dodajOcene(p1, ((Student*)s2)->getNrAlbumu(), 4);
+    ((Wykladowca*)w1)->dodajOcene(p1, ((Student*)s2)->getNrAlbumu(), 5);
+    ((Wykladowca*)w1)->dodajOcene(p2, ((Student*)s1)->getNrAlbumu(), 4);
+    ((Wykladowca*)w1)->dodajOcene(p2, ((Student*)s3)->getNrAlbumu(), 2);
+    ((Wykladowca*)w1)->dodajOcene(p2, ((Student*)s3)->getNrAlbumu(), 3);
+
+    ((Wykladowca*)w1)->dodajMaterial(p1, "www.materialy-IO.com");
+    ((Wykladowca*)w1)->dodajMaterial(p1, "www.materialy-IO2.com");
+    ((Wykladowca*)w1)->dodajMaterial(p2, "www.materialy-AiSD.com");
+    // Koniec danych startowych
+
     uczelnia->dodajNarzedzie(excel);
     uczelnia->dodajNarzedzie(word);
 

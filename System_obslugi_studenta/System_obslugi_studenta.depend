@@ -77,3 +77,106 @@
 1686591798 source:f:\io\projektio\system_obslugi_studenta\wykladowca.cpp
 	"Wykladowca.h"
 
+1686406568 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.cpp
+	"Narzedzie.h"
+
+1686407474 c:\users\ja\documents\github\projektio\system_obslugi_studenta\narzedzie.h
+	<iostream>
+	<string>
+
+1686693567 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.cpp
+	"Przedmiot.h"
+
+1686674969 c:\users\ja\documents\github\projektio\system_obslugi_studenta\przedmiot.h
+	<iostream>
+	<string>
+	<vector>
+	"Wykladowca.h"
+	"Student.h"
+
+1686674969 c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.h
+	<iostream>
+	<string>
+	<vector>
+	"Uzytkownik.h"
+	"Przedmiot.h"
+	"Student.h"
+
+1686697359 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.h
+	<iostream>
+	<string>
+
+1686674969 c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.h
+	<iostream>
+	<string>
+	<map>
+	<vector>
+	"Uzytkownik.h"
+	"Przedmiot.h"
+
+1686674969 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\student.cpp
+	"Student.h"
+
+1686408214 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\tests\test_class.cpp
+	<iostream>
+	"../Narzedzie.h"
+	"../Przedmiot.h"
+	"../Student.h"
+	"../Uczelnia.h"
+	"../Uzytkownik.h"
+	"../Wykladowca.h"
+	<windows.h>
+	<conio.h>
+
+1686407489 c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.h
+	<iostream>
+	<string>
+	<vector>
+	"Uzytkownik.h"
+	"Student.h"
+	"Narzedzie.h"
+
+1686696183 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uczelnia.cpp
+	"Uczelnia.h"
+
+1684947058 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\uzytkownik.cpp
+	"Uzytkownik.h"
+
+1686693568 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\wykladowca.cpp
+	"Wykladowca.h"
+
+1686697455 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	"Uczelnia.h"
+	"Uzytkownik.h"
+	"Student.h"
+	"Wykladowca.h"
+	"Przedmiot.h"
+
+1686677907 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\testy_jednostkowe\testy_narzedzie.cpp
+	<cassert>
+	<iostream>
+	"../Narzedzie.h"
+
+1686685961 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\testy_integracyjne\bottom_up.cpp
+	<iostream>
+	<cassert>
+	"../Uczelnia.h"
+	"../Student.h"
+	"../Wykladowca.h"
+	"../Narzedzie.h"
+	"../Uzytkownik.h"
+	"../Przedmiot.h"
+
+1686694251 source:c:\users\ja\documents\github\projektio\system_obslugi_studenta\testy_funkcjonalne\test_dodaj_materialy_z_przedmiotow.cpp
+	<iostream>
+	<cassert>
+	"../Narzedzie.h"
+	"../Przedmiot.h"
+	"../Student.h"
+	"../Uczelnia.h"
+	"../Uzytkownik.h"
+	"../Wykladowca.h"
+

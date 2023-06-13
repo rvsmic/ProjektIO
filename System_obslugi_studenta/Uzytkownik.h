@@ -21,12 +21,12 @@ using std::string;
 
 class Uzytkownik {
 public:
-	virtual void setLogin(string login);
-	virtual string getLogin();
-	virtual void setHaslo(string haslo);
-	virtual string getHaslo();
-	virtual void zalogujSie();
-	virtual void wylogujSie();
+	void setLogin(string login);
+	string getLogin();
+	void setHaslo(string haslo);
+	string getHaslo();
+	void zalogujSie();
+	void wylogujSie();
 	bool czyStudent;
 protected:
 	string login;

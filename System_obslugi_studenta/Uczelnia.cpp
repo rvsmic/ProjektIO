@@ -17,10 +17,6 @@ Uczelnia::Uczelnia(string nazwa) {
 }
 
 Uczelnia::~Uczelnia() {
-    for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
-        delete *x;
-    }
-
     for(auto x = uzytkownicy.begin(); x != uzytkownicy.end(); ++x){
         if((*x)->czyStudent) delete (Student*)*x;
         else delete (Wykladowca*)*x;
@@ -58,7 +54,6 @@ void Uczelnia::dodajNarzedzie(Narzedzie* narzedzie) {
 void Uczelnia::usunNarzedzie(string nazwa) {
     for(auto x = narzedzia.begin(); x != narzedzia.end(); ++x){
         if((*x)->getNazwa() == nazwa){
-            delete *x;
             narzedzia.erase(x);
             return;
         }
@@ -134,6 +129,7 @@ Student* Uczelnia::znajdzStudenta(string nrAlbumu){
     }
 
     cout << "Nie znaleziono studenta z takim numerem albumu!\n";
+    return nullptr;
 }
 
 void Uczelnia::wyswietlNarzedzia(){

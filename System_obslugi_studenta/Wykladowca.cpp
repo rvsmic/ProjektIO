@@ -41,7 +41,6 @@ void Wykladowca::dodajPrzedmiot(string nazwa) {
     this->przedmioty.push_back(przedmiot);
 }
 
-// troche wyglada mi jak kompozycja...
 void Wykladowca::usunPrzedmiot(Przedmiot* przedmiot) {
     for(auto student: *(przedmiot->getStudenci())) {
         usunStudentaZPrzedmiotu(przedmiot,student);
@@ -53,18 +52,10 @@ void Wykladowca::usunPrzedmiot(Przedmiot* przedmiot) {
         }
     }
 
-
-
-
-    // co z przedmiotem bo nw czy moge tutaj usunac deletem jak to asocjacja????
-
-
-
-
     delete przedmiot;
     cout<<"Pomyslnie usunieto przedmiot!\n";
 }
-// ZMIANA NAZWY BO BEZ SENSU
+
 void Wykladowca::dodajMaterial(Przedmiot* przedmiot, string link) {
     przedmiot->dodajMaterial(link);
 }
@@ -74,7 +65,10 @@ void Wykladowca::usunMaterial(Przedmiot* przedmiot) {
 }
 
 void Wykladowca::dodajOcene(Przedmiot* przedmiot, string nrAlbumu, int ocena) {
-    przedmiot->znajdzStudenta(nrAlbumu)->dodajOcene(przedmiot, ocena);
+    Student* stud = przedmiot->znajdzStudenta(nrAlbumu);
+    if(stud != nullptr){
+        stud->dodajOcene(przedmiot, ocena);
+    }
     cout<<"Pomyslnie dodano ocene "<<ocena<<" studentowi o nr. albumu "<<nrAlbumu<<"!\n";
 }
 
