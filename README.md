@@ -28,15 +28,15 @@
 * Naprawić activity diagramy - bez logowania itp. - jak są w scenariuszach startowe warunki to od nich zaczynamy :heavy_check_mark:
 * System pause po powrotach do pętli while :heavy_check_mark:
 * Wyświetlanie stanu programu wszędzie :heavy_check_mark:
-* Getch zamiast cin :x:
 * Wyrównać metody w staruml / cpp :heavy_check_mark:
-* Dokonczyc implementację :grey_question: (*Użytkownik jako klasa abstrakcyjna, użyteczność niektórych metod*)
-* Zacząć testy
+* Dokonczyc implementację :heavy_check_mark:
+* Zacząć testy :heavy_check_mark:
 
 ## Tydzień IV
 
 ### TODO:
-* Poprawić sequence diagram
-* Przejrzeć kod i pousuwać ewentualne komentarze
-* Przejrzeć raport i wygenerować kopie dla każdego
-* TESTY + dodać je do raportu
+* Poprawić sequence diagram :heavy_check_mark:
+* Przejrzeć kod i pousuwać ewentualne komentarze    :heavy_check_mark:
+* Przejrzeć raport i wygenerować kopie dla każdego  :question:
+* TESTY + dodać je do raportu   :question:
+* Użytkownik na wirtualną klase
