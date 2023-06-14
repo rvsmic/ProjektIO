@@ -107,6 +107,11 @@ vector <Przedmiot*>* Wykladowca::getPrzedmioty(){
     return &przedmioty;
 }
 
+void Wykladowca::sprawdzDane() {
+    cout<<"Witaj wykladowco!\n";
+    cout<<"Login: "<<login<<"\n";
+    cout<<"Identyfikator: "<<identyfikator<<"\n";
+}
 
 
 

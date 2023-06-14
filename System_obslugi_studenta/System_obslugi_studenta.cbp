@@ -45,7 +45,48 @@
 		<Unit filename="Wykladowca.cpp" />
 		<Unit filename="Wykladowca.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="tests/test_class.cpp" />
+		<Unit filename="testy_funkcjonalne/test_Dodaj_materialy_z_przedmiotow.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_funkcjonalne/test_Logowanie.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_funkcjonalne/test_Skorzystaj_z_narzedzi_dydaktycznych.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_funkcjonalne/test_Sprawdz_materialy_z_przedmiotow.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_funkcjonalne/test_Wstaw_i_Sprawdz_oceny.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_funkcjonalne/test_Zarejestruj_sie.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_integracyjne/bottom_up.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_integracyjne/top_down.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_jednostkowe/testy_Narzedzie.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_jednostkowe/testy_Przedmiot.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_jednostkowe/testy_Student.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_jednostkowe/testy_Uczelnia.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_jednostkowe/testy_Wykladowca.cpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testy_systemowe/test_main.cpp">
+			<Option target="Release" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

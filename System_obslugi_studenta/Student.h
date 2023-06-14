@@ -40,6 +40,7 @@ public:
 	void wyswietlPrzedmioty();
 	map<Przedmiot*, vector<int>>* getPrzedmioty();
 	void usunZPrzedmiotu(Przedmiot* przedmiot);
+	void sprawdzDane();
 private:
 	string nrAlbumu;
 	map <Przedmiot*,vector<int> > oceny;

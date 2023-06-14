@@ -44,6 +44,7 @@ public:
 	void usunStudentaZPrzedmiotu(Przedmiot* przedmiot, Student* student);
 	void wyswietlPrzedmioty();
 	vector <Przedmiot*>* getPrzedmioty();
+	void sprawdzDane();
 private:
 	string identyfikator;
 	vector <Przedmiot*> przedmioty;

@@ -177,7 +177,7 @@ int main()
             }
 
         } else if (user->czyStudent){           // STUDENT
-            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n\n";
+            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n3 - Wyswietl profil\n9 - Wyjdz z programu\n\n";
             cout<<"------------------------------\n\n";
             cin >> option;
             system("cls");
@@ -272,6 +272,15 @@ int main()
                     break;
                     }
                 }
+                case '3': {
+                    system("cls");
+                    cout<<"\nP R O F I L\n\n";
+                    cout<<"------------------------------\n\n";
+                    ((Student*)user)->sprawdzDane();
+                    cout<<"\n";
+                    system("pause");
+                    break;
+                }
                 case '9':{
                     EXIT_FLAG = true;
                     cout << "Wyjscie z programu...\n";
@@ -286,7 +295,7 @@ int main()
             }
 
         } else {                                // WYKLADOWCA
-            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n9 - Wyjdz z programu\n\n";
+            cout << "0 - Wyloguj sie\n1 - Narzedzia dydaktyczne\n2 - Przedmioty\n3 - Wyswietl profil\n9 - Wyjdz z programu\n\n";
             cout<<"------------------------------\n\n";
             cin >> option;
             system("cls");
@@ -508,6 +517,15 @@ int main()
                             break;
                         }
                     }
+                    system("pause");
+                    break;
+                }
+                case '3': {
+                    system("cls");
+                    cout<<"\nP R O F I L\n\n";
+                    cout<<"------------------------------\n\n";
+                    ((Wykladowca*)user)->sprawdzDane();
+                    cout<<"\n";
                     system("pause");
                     break;
                 }

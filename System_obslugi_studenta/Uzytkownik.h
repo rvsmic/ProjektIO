@@ -27,6 +27,7 @@ public:
 	string getHaslo();
 	void zalogujSie();
 	void wylogujSie();
+	virtual void sprawdzDane() = 0;
 	bool czyStudent;
 protected:
 	string login;

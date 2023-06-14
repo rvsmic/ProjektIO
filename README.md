@@ -39,4 +39,4 @@
 * Przejrzeć kod i pousuwać ewentualne komentarze    :heavy_check_mark:
 * Przejrzeć raport i wygenerować kopie dla każdego  :question:
 * TESTY + dodać je do raportu   :question:
-* Użytkownik na wirtualną klase
+* Użytkownik na wirtualną klase :heavy_check_mark:

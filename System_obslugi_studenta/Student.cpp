@@ -94,3 +94,9 @@ void Student::usunZPrzedmiotu(Przedmiot* przedmiot) {
     oceny[przedmiot].clear();
     oceny.erase(przedmiot);
 }
+
+void Student::sprawdzDane() {
+    cout<<"Witaj studencie!\n";
+    cout<<"Login: "<<login<<"\n";
+    cout<<"Nr. albumu: "<<nrAlbumu<<"\n";
+}
