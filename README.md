@@ -40,3 +40,4 @@
 * Przejrzeć raport i wygenerować kopie dla każdego  :heavy_check_mark:
 * TESTY + dodać je do raportu   :heavy_check_mark:
 * Użytkownik na wirtualną klase :heavy_check_mark:
+* Dokumentacja testowa :heavy_check_mark:
