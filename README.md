@@ -1,7 +1,7 @@
 # Projekt zespołowy z przedmiotu Inżynieria Oprogramowania
 
 ## Tydzień I
-*Do wykonania na następne zajęcia - 2 pierwsze podpunkty.*
+*Do wykonania na następne zajęcia - 2 pierwsze podpunkty.* :heavy_check_mark:
 
 ### Podpowiedzi: 
 * Na diagramie przypadków użycia nie wiązać ze sobą zbyt dużej ilości "dymków".
@@ -9,18 +9,18 @@
 * Należy zrobić 5/6 głównych funkcjonalności systemu.
 
 ## Tydzień II
-*Do wykonania na nastepne zajecia - podpunkty 3-8*
+*Do wykonania na nastepne zajecia - podpunkty 3-8* :heavy_check_mark:
 
 ### Wstępne założenia warstwy logicznej:
 * Uczelnia robi logowanie i rejestracje
 * Logowanie zwraca pointera na uzytkownika
 
 ### TODO:
-* Naprawić usecases ✓
-* Dodać atrybuty do logicznego ✓
-* Diagramy aktywności ✓
-* Diagram sekwencji ✓
-* *(Jezeli będzie czas to)* implementacja ✓
+* Naprawić usecases :heavy_check_mark:
+* Dodać atrybuty do logicznego :heavy_check_mark:
+* Diagramy aktywności :heavy_check_mark:
+* Diagram sekwencji :heavy_check_mark:
+* *(Jezeli będzie czas to)* implementacja :heavy_check_mark:
 
 ## Tydzień III
 
@@ -37,6 +37,6 @@
 ### TODO:
 * Poprawić sequence diagram :heavy_check_mark:
 * Przejrzeć kod i pousuwać ewentualne komentarze    :heavy_check_mark:
-* Przejrzeć raport i wygenerować kopie dla każdego  :question:
-* TESTY + dodać je do raportu   :question:
+* Przejrzeć raport i wygenerować kopie dla każdego  :heavy_check_mark:
+* TESTY + dodać je do raportu   :heavy_check_mark:
 * Użytkownik na wirtualną klase :heavy_check_mark:
